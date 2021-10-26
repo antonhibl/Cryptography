@@ -1,0 +1,3169 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    150814,       3159]
+NotebookOptionsPosition[    147703,       3100]
+NotebookOutlinePosition[    148144,       3117]
+CellTagsIndexPosition[    148101,       3114]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["The Discrete Logarithm Problem", "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellFrameColor->GrayLevel[0.75],
+ CellChangeTimes->{{3.842549033329277*^9, 
+  3.842549100900639*^9}},ExpressionUUID->"7577991f-98ed-4439-8521-\
+5da93b5ff223"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ NamespaceBox["WolframAlphaQueryParseResults",
+  DynamicModuleBox[{Typeset`q$$ = "3^((2^5)-1)mod((2^13)-1)", Typeset`newq$$ =
+    "3^((2^5)-1)mod((2^13)-1)", Typeset`chosen$$ = 
+   "Mod[3^(2^5 - 1), 2^13 - 1]", Typeset`open$$ = False}, 
+   PaneSelectorBox[{False->
+    DynamicModuleBox[{WolframAlphaClient`Private`show$$ = False, 
+     WolframAlphaClient`Private`assumptionsQ$$ = False}, 
+     TagBox[
+      FrameBox[
+       TagBox[GridBox[{
+          {
+           InputFieldBox[Dynamic[Typeset`newq$$], String,
+            Appearance->None,
+            BaseStyle->{"CalculateInput"},
+            ContinuousAction->True,
+            Enabled->True,
+            FieldSize->{{1, 40}, {1, 
+               DirectedInfinity[1]}},
+            TrapSelection->False], 
+           ItemBox[
+            ButtonBox[
+             PaneSelectorBox[{True->
+              TagBox[
+               TooltipBox[
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "WABitmaps", "OrangeSquarePlus"],
+                 ImageSizeCache->{11., {2., 9.}}],
+                DynamicBox[
+                 ToBoxes[
+                  FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"], 
+                  StandardForm]]],
+               Annotation[#, 
+                Dynamic[
+                 FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"]], 
+                "Tooltip"]& ], False->
+              TagBox[
+               TooltipBox[
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "WABitmaps", "GraySquarePlus"],
+                 ImageSizeCache->{11., {2., 9.}}],
+                DynamicBox[
+                 ToBoxes[
+                  FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"], 
+                  StandardForm]]],
+               Annotation[#, 
+                Dynamic[
+                 FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"]], 
+                "Tooltip"]& ]}, Dynamic[WolframAlphaClient`Private`show$$],
+              ImageSize->All],
+             Appearance->None,
+             ButtonFunction:>(Quiet[
+                WolframAlpha[]]; If[
+                Or[
+                 CurrentValue["OptionKey"], 
+                 CurrentValue["AltKey"]], SelectionMove[
+                  ButtonNotebook[], All, ButtonCell, AutoScroll -> False]; 
+                NotebookWrite[
+                  ButtonNotebook[], 
+                  Cell[
+                  Typeset`newq$$, "WolframAlphaShort", FormatType -> 
+                   "TextForm"], All], Typeset`open$$ = True; 
+                WolframAlphaClient`Private`extrudeFromFastParse[
+                 "3^((2^5)-1)mod((2^13)-1)", 
+                  Defer[
+                   Mod[3^(2^5 - 1), 2^13 - 1]], "Fast parse"]; 
+                Typeset`open$$ = False]),
+             Evaluator->Automatic,
+             Method->"Queued"],
+            Alignment->{Right, Top},
+            StripOnInput->False]},
+          {
+           PaneBox[
+            TagBox[
+             TooltipBox[
+              ButtonBox[
+               PaneSelectorBox[{False->
+                StyleBox[
+                 RowBox[{"Mod", "[", 
+                  RowBox[{
+                   RowBox[{"3", "^", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "5"}], " ", "-", " ", "1"}], ")"}]}], 
+                   ",", " ", 
+                   RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}]}], "]"}],
+                 StripOnInput->False,
+                 NumberMarks->False], True->
+                StyleBox[
+                 RowBox[{"Mod", "[", 
+                  RowBox[{
+                   RowBox[{"3", "^", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "5"}], " ", "-", " ", "1"}], ")"}]}], 
+                   ",", " ", 
+                   RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}]}], "]"}],
+                 StripOnInput->False,
+                 ShowSyntaxStyles->False,
+                 NumberMarks->False,
+                 FontColor->RGBColor[1, 0.5, 0]]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                BaseStyle->{ShowStringCharacters -> True},
+                FrameMargins->0,
+                ImageSize->Automatic],
+               Alignment->Left,
+               Appearance->None,
+               BaseStyle->{},
+               ButtonFunction:>(SelectionMove[
+                  ButtonNotebook[], All, ButtonCell]; NotebookWrite[
+                  ButtonNotebook[], 
+                  Cell[
+                   BoxData[
+                    RowBox[{"Mod", "[", 
+                    RowBox[{
+                    RowBox[{"3", "^", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "5"}], " ", "-", " ", "1"}], ")"}]}], 
+                    ",", " ", 
+                    RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}]}], "]"}]], 
+                   "Input"], All]; SelectionMove[
+                  ButtonNotebook[], After, CellContents]),
+               Evaluator->Automatic,
+               ImageSize->Automatic,
+               Method->"Preemptive"],
+              DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource["WAStrings", "RemoveResults"], 
+                StandardForm]]],
+             Annotation[#, 
+              Dynamic[
+               FEPrivate`FrontEndResource["WAStrings", "RemoveResults"]], 
+              "Tooltip"]& ],
+            AppearanceElements->{},
+            BaseStyle->{ShowStringCharacters -> True, ScriptLevel -> 0},
+            ImageSize->{Automatic, {1, 100}},
+            Scrollbars->{False, Automatic}], "\[SpanFromLeft]"}
+         },
+         AutoDelete->False,
+         BaselinePosition->{1, 1},
+         FrameStyle->GrayLevel[0.85],
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxDividers->{
+          "Columns" -> {{False}}, "Rows" -> {False, {True}, False}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+        "Grid"],
+       Alignment->Top,
+       Background->Dynamic[
+         FEPrivate`If[
+          FEPrivate`And[
+           FEPrivate`SameQ[
+            FEPrivate`Head[Typeset`newq$$], String], 
+           FEPrivate`UnsameQ[Typeset`q$$, Typeset`newq$$]], 
+          RGBColor[1., 0.975, 0.95], 
+          GrayLevel[1]]],
+       BaselinePosition->Baseline,
+       FrameStyle->GrayLevel[0.85],
+       ImageSize->Automatic,
+       RoundingRadius->5,
+       StripOnInput->False],
+      EventHandlerTag[{
+       "MouseEntered" :> 
+        FEPrivate`Set[WolframAlphaClient`Private`show$$, True], "MouseExited" :> 
+        FEPrivate`Set[WolframAlphaClient`Private`show$$, False], Method -> 
+        "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]],
+     DynamicModuleValues:>{}], True->
+    TagBox[GridBox[{
+       {
+        DynamicModuleBox[{WolframAlphaClient`Private`show$$ = False, 
+         WolframAlphaClient`Private`assumptionsQ$$ = False}, 
+         TagBox[
+          FrameBox[
+           TagBox[GridBox[{
+              {
+               InputFieldBox[Dynamic[Typeset`newq$$], String,
+                Appearance->None,
+                BaseStyle->{"CalculateInput"},
+                ContinuousAction->True,
+                Enabled->True,
+                FieldSize->{{1, 40}, {1, 
+                   DirectedInfinity[1]}},
+                TrapSelection->False], 
+               ItemBox[
+                ButtonBox[
+                 PaneSelectorBox[{True->
+                  TagBox[
+                   TooltipBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WABitmaps", "OrangeSquarePlus"]],
+                    DynamicBox[
+                    ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"],
+                     StandardForm]]],
+                   Annotation[#, 
+                    Dynamic[
+                    FEPrivate`FrontEndResource[
+                    "WAStrings", "ShowAllResults"]], "Tooltip"]& ], False->
+                  TagBox[
+                   TooltipBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WABitmaps", "GraySquarePlus"]],
+                    DynamicBox[
+                    ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"],
+                     StandardForm]]],
+                   Annotation[#, 
+                    Dynamic[
+                    FEPrivate`FrontEndResource[
+                    "WAStrings", "ShowAllResults"]], "Tooltip"]& ]}, Dynamic[
+                  WolframAlphaClient`Private`show$$],
+                  ImageSize->All],
+                 Appearance->None,
+                 ButtonFunction:>(Quiet[
+                    WolframAlpha[]]; If[
+                    Or[
+                    CurrentValue["OptionKey"], 
+                    CurrentValue["AltKey"]], SelectionMove[
+                    ButtonNotebook[], All, ButtonCell, AutoScroll -> False]; 
+                    NotebookWrite[
+                    ButtonNotebook[], 
+                    Cell[
+                    Typeset`newq$$, "WolframAlphaShort", FormatType -> 
+                    "TextForm"], All], Typeset`open$$ = True; 
+                    WolframAlphaClient`Private`extrudeFromFastParse[
+                    "3^((2^5)-1)mod((2^13)-1)", 
+                    Defer[
+                    Mod[3^(2^5 - 1), 2^13 - 1]], "Fast parse"]; 
+                    Typeset`open$$ = False]),
+                 Evaluator->Automatic,
+                 Method->"Queued"],
+                Alignment->{Right, Top},
+                StripOnInput->False]},
+              {
+               PaneBox[
+                TagBox[
+                 TooltipBox[
+                  ButtonBox[
+                   PaneSelectorBox[{False->
+                    StyleBox[
+                    RowBox[{"Mod", "[", 
+                    RowBox[{
+                    RowBox[{"3", "^", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "5"}], " ", "-", " ", "1"}], ")"}]}], 
+                    ",", " ", 
+                    RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}]}], "]"}],
+                    StripOnInput->False,
+                    NumberMarks->False], True->
+                    StyleBox[
+                    RowBox[{"Mod", "[", 
+                    RowBox[{
+                    RowBox[{"3", "^", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "5"}], " ", "-", " ", "1"}], ")"}]}], 
+                    ",", " ", 
+                    RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}]}], "]"}],
+                    StripOnInput->False,
+                    ShowSyntaxStyles->False,
+                    NumberMarks->False,
+                    FontColor->RGBColor[1, 0.5, 0]]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    BaseStyle->{ShowStringCharacters -> True},
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                   Alignment->Left,
+                   Appearance->None,
+                   BaseStyle->{},
+                   ButtonFunction:>(SelectionMove[
+                    ButtonNotebook[], All, ButtonCell]; NotebookWrite[
+                    ButtonNotebook[], 
+                    Cell[
+                    BoxData[
+                    RowBox[{"Mod", "[", 
+                    RowBox[{
+                    RowBox[{"3", "^", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "5"}], " ", "-", " ", "1"}], ")"}]}], 
+                    ",", " ", 
+                    RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}]}], "]"}]], 
+                    "Input"], All]; SelectionMove[
+                    ButtonNotebook[], After, CellContents]),
+                   Evaluator->Automatic,
+                   ImageSize->Automatic,
+                   Method->"Preemptive"],
+                  DynamicBox[
+                   ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "RemoveResults"], 
+                    StandardForm]]],
+                 Annotation[#, 
+                  Dynamic[
+                   FEPrivate`FrontEndResource["WAStrings", "RemoveResults"]], 
+                  "Tooltip"]& ],
+                AppearanceElements->{},
+                BaseStyle->{ShowStringCharacters -> True, ScriptLevel -> 0},
+                ImageSize->{Automatic, {1, 100}},
+                Scrollbars->{False, Automatic}], "\[SpanFromLeft]"}
+             },
+             AutoDelete->False,
+             BaselinePosition->{1, 1},
+             FrameStyle->GrayLevel[0.85],
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxDividers->{
+              "Columns" -> {{False}}, "Rows" -> {False, {True}, False}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Grid"],
+           Alignment->Top,
+           Background->Dynamic[
+             FEPrivate`If[
+              FEPrivate`And[
+               FEPrivate`SameQ[
+                FEPrivate`Head[Typeset`newq$$], String], 
+               FEPrivate`UnsameQ[Typeset`q$$, Typeset`newq$$]], 
+              RGBColor[1., 0.975, 0.95], 
+              GrayLevel[1]]],
+           BaselinePosition->Baseline,
+           FrameStyle->GrayLevel[0.85],
+           ImageSize->Automatic,
+           RoundingRadius->5,
+           StripOnInput->False],
+          
+          EventHandlerTag[{
+           "MouseEntered" :> 
+            FEPrivate`Set[WolframAlphaClient`Private`show$$, True], 
+            "MouseExited" :> 
+            FEPrivate`Set[WolframAlphaClient`Private`show$$, False], Method -> 
+            "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]],
+         DynamicModuleValues:>{}]},
+       {
+        InterpretationBox[
+         StyleBox[
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEExpressions", "NecklaceAnimator"][20]],
+          AnimatorBoxOptions->{ImageSize->20}],
+         Animator[Appearance -> "Necklace", ImageSize -> 20],
+         BaseStyle->{"Deploy"}]}
+      },
+      BaselinePosition->{1, 1},
+      DefaultBaseStyle->"Column",
+      GridBoxAlignment->{"Columns" -> {{Left}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+     
+     "Column"]}, Dynamic[
+     TrueQ[Typeset`open$$]],
+    BaseStyle->{Deployed -> True},
+    ImageSize->Automatic],
+   DynamicModuleValues:>{}],
+  BaseStyle->{Deployed -> True},
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True]], "WolframAlphaShortInput",
+ CellLabel->"In[36]:=",ExpressionUUID->"547fb9da-f00d-4f96-a1f6-7bc84d926ada"],
+
+Cell[BoxData["6876"], "Output",
+ CellChangeTimes->{{3.842549145871818*^9, 3.842549171912875*^9}, {
+  3.8425494032833138`*^9, 3.8425494129410057`*^9}, {3.842549448875955*^9, 
+  3.842549455348873*^9}},
+ CellLabel->"Out[36]=",ExpressionUUID->"3b88d063-53d9-4059-9946-aa1895066457"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FactorInteger", "[", "6876", "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[27]:=",ExpressionUUID->"24a7e5c9-b526-4444-822f-157f44bc767f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"191", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.842549178822053*^9},
+ CellLabel->"Out[27]=",ExpressionUUID->"4266eb5f-eeab-45ad-99f8-c5329acc66eb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ NamespaceBox["WolframAlphaQueryParseResults",
+  DynamicModuleBox[{Typeset`q$$ = 
+   "(3^x)-((2^13)-1)*floor((3^x)/((2^13)-1))=6876", Typeset`newq$$ = 
+   "(3^x)-((2^13)-1)*floor((3^x)/((2^13)-1))=6876", Typeset`chosen$$ = 
+   "3^x - (2^13 - 1)*Floor[3^x/(2^13 - 1)] == 6876", Typeset`open$$ = False}, 
+   
+   PaneSelectorBox[{False->
+    DynamicModuleBox[{WolframAlphaClient`Private`show$$ = False, 
+     WolframAlphaClient`Private`assumptionsQ$$ = False}, 
+     TagBox[
+      FrameBox[
+       TagBox[GridBox[{
+          {
+           InputFieldBox[Dynamic[Typeset`newq$$], String,
+            Appearance->None,
+            BaseStyle->{"CalculateInput"},
+            ContinuousAction->True,
+            Enabled->True,
+            FieldSize->{{1, 40}, {1, 
+               DirectedInfinity[1]}},
+            TrapSelection->False], 
+           ItemBox[
+            ButtonBox[
+             PaneSelectorBox[{True->
+              TagBox[
+               TooltipBox[
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "WABitmaps", "OrangeSquarePlus"],
+                 ImageSizeCache->{11., {2., 9.}}],
+                DynamicBox[
+                 ToBoxes[
+                  FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"], 
+                  StandardForm]]],
+               Annotation[#, 
+                Dynamic[
+                 FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"]], 
+                "Tooltip"]& ], False->
+              TagBox[
+               TooltipBox[
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "WABitmaps", "GraySquarePlus"],
+                 ImageSizeCache->{11., {2., 9.}}],
+                DynamicBox[
+                 ToBoxes[
+                  FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"], 
+                  StandardForm]]],
+               Annotation[#, 
+                Dynamic[
+                 FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"]], 
+                "Tooltip"]& ]}, Dynamic[WolframAlphaClient`Private`show$$],
+              ImageSize->All],
+             Appearance->None,
+             ButtonFunction:>(Quiet[
+                WolframAlpha[]]; If[
+                Or[
+                 CurrentValue["OptionKey"], 
+                 CurrentValue["AltKey"]], SelectionMove[
+                  ButtonNotebook[], All, ButtonCell, AutoScroll -> False]; 
+                NotebookWrite[
+                  ButtonNotebook[], 
+                  Cell[
+                  Typeset`newq$$, "WolframAlphaShort", FormatType -> 
+                   "TextForm"], All], Typeset`open$$ = True; 
+                WolframAlphaClient`Private`extrudeFromFastParse[
+                 "(3^x)-((2^13)-1)*floor((3^x)/((2^13)-1))=6876", 
+                  Defer[
+                  3^$CellContext`x - (2^13 - 1) 
+                    Floor[3^$CellContext`x/(2^13 - 1)] == 6876], 
+                  "Fast parse"]; Typeset`open$$ = False]),
+             Evaluator->Automatic,
+             Method->"Queued"],
+            Alignment->{Right, Top},
+            StripOnInput->False]},
+          {
+           PaneBox[
+            TagBox[
+             TooltipBox[
+              ButtonBox[
+               PaneSelectorBox[{False->
+                StyleBox[
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"3", "^", "x"}], " ", "-", " ", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}], ")"}], 
+                    "*", 
+                    RowBox[{"Floor", "[", 
+                    RowBox[{
+                    RowBox[{"3", "^", "x"}], "/", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}], ")"}]}], 
+                    "]"}]}]}], " ", "==", " ", "6876"}],
+                 StripOnInput->False,
+                 NumberMarks->False], True->
+                StyleBox[
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"3", "^", "x"}], " ", "-", " ", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}], ")"}], 
+                    "*", 
+                    RowBox[{"Floor", "[", 
+                    RowBox[{
+                    RowBox[{"3", "^", "x"}], "/", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}], ")"}]}], 
+                    "]"}]}]}], " ", "==", " ", "6876"}],
+                 StripOnInput->False,
+                 ShowSyntaxStyles->False,
+                 NumberMarks->False,
+                 FontColor->RGBColor[1, 0.5, 0]]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                BaseStyle->{ShowStringCharacters -> True},
+                FrameMargins->0,
+                ImageSize->Automatic],
+               Alignment->Left,
+               Appearance->None,
+               BaseStyle->{},
+               ButtonFunction:>(SelectionMove[
+                  ButtonNotebook[], All, ButtonCell]; NotebookWrite[
+                  ButtonNotebook[], 
+                  Cell[
+                   BoxData[
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"3", "^", "x"}], " ", "-", " ", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}], ")"}], 
+                    "*", 
+                    RowBox[{"Floor", "[", 
+                    RowBox[{
+                    RowBox[{"3", "^", "x"}], "/", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}], ")"}]}], 
+                    "]"}]}]}], " ", "==", " ", "6876"}]], "Input"], All]; 
+                SelectionMove[
+                  ButtonNotebook[], After, CellContents]),
+               Evaluator->Automatic,
+               ImageSize->Automatic,
+               Method->"Preemptive"],
+              DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource["WAStrings", "RemoveResults"], 
+                StandardForm]]],
+             Annotation[#, 
+              Dynamic[
+               FEPrivate`FrontEndResource["WAStrings", "RemoveResults"]], 
+              "Tooltip"]& ],
+            AppearanceElements->{},
+            BaseStyle->{ShowStringCharacters -> True, ScriptLevel -> 0},
+            ImageSize->{Automatic, {1, 100}},
+            Scrollbars->{False, Automatic}], "\[SpanFromLeft]"}
+         },
+         AutoDelete->False,
+         BaselinePosition->{1, 1},
+         FrameStyle->GrayLevel[0.85],
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxDividers->{
+          "Columns" -> {{False}}, "Rows" -> {False, {True}, False}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+        "Grid"],
+       Alignment->Top,
+       Background->Dynamic[
+         FEPrivate`If[
+          FEPrivate`And[
+           FEPrivate`SameQ[
+            FEPrivate`Head[Typeset`newq$$], String], 
+           FEPrivate`UnsameQ[Typeset`q$$, Typeset`newq$$]], 
+          RGBColor[1., 0.975, 0.95], 
+          GrayLevel[1]]],
+       BaselinePosition->Baseline,
+       FrameStyle->GrayLevel[0.85],
+       ImageSize->Automatic,
+       RoundingRadius->5,
+       StripOnInput->False],
+      EventHandlerTag[{
+       "MouseEntered" :> 
+        FEPrivate`Set[WolframAlphaClient`Private`show$$, True], "MouseExited" :> 
+        FEPrivate`Set[WolframAlphaClient`Private`show$$, False], Method -> 
+        "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]],
+     DynamicModuleValues:>{}], True->
+    TagBox[GridBox[{
+       {
+        DynamicModuleBox[{WolframAlphaClient`Private`show$$ = False, 
+         WolframAlphaClient`Private`assumptionsQ$$ = False}, 
+         TagBox[
+          FrameBox[
+           TagBox[GridBox[{
+              {
+               InputFieldBox[Dynamic[Typeset`newq$$], String,
+                Appearance->None,
+                BaseStyle->{"CalculateInput"},
+                ContinuousAction->True,
+                Enabled->True,
+                FieldSize->{{1, 40}, {1, 
+                   DirectedInfinity[1]}},
+                TrapSelection->False], 
+               ItemBox[
+                ButtonBox[
+                 PaneSelectorBox[{True->
+                  TagBox[
+                   TooltipBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WABitmaps", "OrangeSquarePlus"]],
+                    DynamicBox[
+                    ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"],
+                     StandardForm]]],
+                   Annotation[#, 
+                    Dynamic[
+                    FEPrivate`FrontEndResource[
+                    "WAStrings", "ShowAllResults"]], "Tooltip"]& ], False->
+                  TagBox[
+                   TooltipBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WABitmaps", "GraySquarePlus"]],
+                    DynamicBox[
+                    ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"],
+                     StandardForm]]],
+                   Annotation[#, 
+                    Dynamic[
+                    FEPrivate`FrontEndResource[
+                    "WAStrings", "ShowAllResults"]], "Tooltip"]& ]}, Dynamic[
+                  WolframAlphaClient`Private`show$$],
+                  ImageSize->All],
+                 Appearance->None,
+                 ButtonFunction:>(Quiet[
+                    WolframAlpha[]]; If[
+                    Or[
+                    CurrentValue["OptionKey"], 
+                    CurrentValue["AltKey"]], SelectionMove[
+                    ButtonNotebook[], All, ButtonCell, AutoScroll -> False]; 
+                    NotebookWrite[
+                    ButtonNotebook[], 
+                    Cell[
+                    Typeset`newq$$, "WolframAlphaShort", FormatType -> 
+                    "TextForm"], All], Typeset`open$$ = True; 
+                    WolframAlphaClient`Private`extrudeFromFastParse[
+                    "(3^x)-((2^13)-1)*floor((3^x)/((2^13)-1))=6876", 
+                    Defer[
+                    3^$CellContext`x - (2^13 - 1) 
+                    Floor[3^$CellContext`x/(2^13 - 1)] == 6876], 
+                    "Fast parse"]; Typeset`open$$ = False]),
+                 Evaluator->Automatic,
+                 Method->"Queued"],
+                Alignment->{Right, Top},
+                StripOnInput->False]},
+              {
+               PaneBox[
+                TagBox[
+                 TooltipBox[
+                  ButtonBox[
+                   PaneSelectorBox[{False->
+                    StyleBox[
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"3", "^", "x"}], " ", "-", " ", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}], ")"}], 
+                    "*", 
+                    RowBox[{"Floor", "[", 
+                    RowBox[{
+                    RowBox[{"3", "^", "x"}], "/", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}], ")"}]}], 
+                    "]"}]}]}], " ", "==", " ", "6876"}],
+                    StripOnInput->False,
+                    NumberMarks->False], True->
+                    StyleBox[
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"3", "^", "x"}], " ", "-", " ", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}], ")"}], 
+                    "*", 
+                    RowBox[{"Floor", "[", 
+                    RowBox[{
+                    RowBox[{"3", "^", "x"}], "/", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}], ")"}]}], 
+                    "]"}]}]}], " ", "==", " ", "6876"}],
+                    StripOnInput->False,
+                    ShowSyntaxStyles->False,
+                    NumberMarks->False,
+                    FontColor->RGBColor[1, 0.5, 0]]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    BaseStyle->{ShowStringCharacters -> True},
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                   Alignment->Left,
+                   Appearance->None,
+                   BaseStyle->{},
+                   ButtonFunction:>(SelectionMove[
+                    ButtonNotebook[], All, ButtonCell]; NotebookWrite[
+                    ButtonNotebook[], 
+                    Cell[
+                    BoxData[
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"3", "^", "x"}], " ", "-", " ", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}], ")"}], 
+                    "*", 
+                    RowBox[{"Floor", "[", 
+                    RowBox[{
+                    RowBox[{"3", "^", "x"}], "/", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "^", "13"}], " ", "-", " ", "1"}], ")"}]}], 
+                    "]"}]}]}], " ", "==", " ", "6876"}]], "Input"], All]; 
+                    SelectionMove[
+                    ButtonNotebook[], After, CellContents]),
+                   Evaluator->Automatic,
+                   ImageSize->Automatic,
+                   Method->"Preemptive"],
+                  DynamicBox[
+                   ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "RemoveResults"], 
+                    StandardForm]]],
+                 Annotation[#, 
+                  Dynamic[
+                   FEPrivate`FrontEndResource["WAStrings", "RemoveResults"]], 
+                  "Tooltip"]& ],
+                AppearanceElements->{},
+                BaseStyle->{ShowStringCharacters -> True, ScriptLevel -> 0},
+                ImageSize->{Automatic, {1, 100}},
+                Scrollbars->{False, Automatic}], "\[SpanFromLeft]"}
+             },
+             AutoDelete->False,
+             BaselinePosition->{1, 1},
+             FrameStyle->GrayLevel[0.85],
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxDividers->{
+              "Columns" -> {{False}}, "Rows" -> {False, {True}, False}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Grid"],
+           Alignment->Top,
+           Background->Dynamic[
+             FEPrivate`If[
+              FEPrivate`And[
+               FEPrivate`SameQ[
+                FEPrivate`Head[Typeset`newq$$], String], 
+               FEPrivate`UnsameQ[Typeset`q$$, Typeset`newq$$]], 
+              RGBColor[1., 0.975, 0.95], 
+              GrayLevel[1]]],
+           BaselinePosition->Baseline,
+           FrameStyle->GrayLevel[0.85],
+           ImageSize->Automatic,
+           RoundingRadius->5,
+           StripOnInput->False],
+          
+          EventHandlerTag[{
+           "MouseEntered" :> 
+            FEPrivate`Set[WolframAlphaClient`Private`show$$, True], 
+            "MouseExited" :> 
+            FEPrivate`Set[WolframAlphaClient`Private`show$$, False], Method -> 
+            "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]],
+         DynamicModuleValues:>{}]},
+       {
+        InterpretationBox[
+         StyleBox[
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEExpressions", "NecklaceAnimator"][20]],
+          AnimatorBoxOptions->{ImageSize->20}],
+         Animator[Appearance -> "Necklace", ImageSize -> 20],
+         BaseStyle->{"Deploy"}]}
+      },
+      BaselinePosition->{1, 1},
+      DefaultBaseStyle->"Column",
+      GridBoxAlignment->{"Columns" -> {{Left}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+     
+     "Column"]}, Dynamic[
+     TrueQ[Typeset`open$$]],
+    BaseStyle->{Deployed -> True},
+    ImageSize->Automatic],
+   DynamicModuleValues:>{}],
+  BaseStyle->{Deployed -> True},
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True]], "WolframAlphaShortInput",
+ CellLabel->"In[29]:=",ExpressionUUID->"463f5017-ad95-4491-9232-fa4b6e67cef6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SuperscriptBox["3", "x"], "-", 
+   RowBox[{"8191", " ", 
+    RowBox[{"Floor", "[", 
+     FractionBox[
+      SuperscriptBox["3", "x"], "8191"], "]"}]}]}], "\[Equal]", 
+  "6876"}]], "Output",
+ CellChangeTimes->{{3.84254926254074*^9, 3.842549288658448*^9}},
+ CellLabel->"Out[29]=",ExpressionUUID->"eb295c1d-0bc2-4d4e-bf3a-a7955ac40b4c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["3", "x"], "-", 
+     RowBox[{"8191", " ", 
+      RowBox[{"Floor", "[", 
+       FractionBox[
+        SuperscriptBox["3", "x"], "8191"], "]"}]}]}], "\[Equal]", "6876"}], 
+   ",", 
+   RowBox[{"{", "x", "}"}], ",", 
+   TemplateBox[{},
+    "Reals"]}], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[30]:=",ExpressionUUID->"cb8e77ed-39e0-4d78-ba1e-c1535e8b189d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Solve", "nsmet", 
+   "\"This system cannot be solved with the methods available to Solve.\"", 2,
+    30, 3, 27456198772281641671, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.842549298513041*^9},
+ CellLabel->
+  "During evaluation of \
+In[30]:=",ExpressionUUID->"7864c739-365b-4bd9-884f-cfbbd333244a"],
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["3", "x"], "-", 
+     RowBox[{"8191", " ", 
+      RowBox[{"Floor", "[", 
+       FractionBox[
+        SuperscriptBox["3", "x"], "8191"], "]"}]}]}], "\[Equal]", "6876"}], 
+   ",", 
+   RowBox[{"{", "x", "}"}], ",", 
+   TemplateBox[{},
+    "Reals"]}], "]"}]], "Output",
+ CellChangeTimes->{3.842549298540844*^9},
+ CellLabel->"Out[30]=",ExpressionUUID->"8b28044d-3096-4211-9ffd-499d7f7c21b4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ NamespaceBox["WolframAlphaQueryParseResults",
+  DynamicModuleBox[{Typeset`q$$ = 
+   "(log(2)+log(2)+log(3)+log(2)+log(191)+log(1))/log(3)", Typeset`newq$$ = 
+   "(log(2)+log(2)+log(3)+log(2)+log(191)+log(1))/log(3)", Typeset`chosen$$ = 
+   "(Log[2] + Log[2] + Log[3] + Log[2] + Log[191] + Log[1])/Log[3]", 
+   Typeset`open$$ = False}, 
+   PaneSelectorBox[{False->
+    DynamicModuleBox[{WolframAlphaClient`Private`show$$ = False, 
+     WolframAlphaClient`Private`assumptionsQ$$ = True}, 
+     TagBox[
+      FrameBox[
+       TagBox[GridBox[{
+          {
+           InputFieldBox[Dynamic[Typeset`newq$$], String,
+            Appearance->None,
+            BaseStyle->{"CalculateInput"},
+            ContinuousAction->True,
+            Enabled->True,
+            FieldSize->{{1, 40}, {1, 
+               DirectedInfinity[1]}},
+            TrapSelection->False], 
+           ButtonBox[
+            TagBox[
+             TooltipBox[
+              StyleBox["\<\"\[RightGuillemet]\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[1, 0.5, 0],
+               FrontFaceColor->RGBColor[1, 0.5, 0],
+               BackFaceColor->RGBColor[1, 0.5, 0],
+               GraphicsColor->RGBColor[1, 0.5, 0],
+               FontColor->RGBColor[1, 0.5, 0]],
+              DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource[
+                "WAStrings", "InterpretationAssumptions"], StandardForm]]],
+             Annotation[#, 
+              Dynamic[
+               FEPrivate`FrontEndResource[
+               "WAStrings", "InterpretationAssumptions"]], "Tooltip"]& ],
+            Appearance->None,
+            BaselinePosition->Baseline,
+            ButtonFunction:>(Quiet[
+               WolframAlpha[]]; Typeset`open$$ = True; 
+             WolframAlphaClient`Private`extrudeFromFastParse[
+              "(log(2)+log(2)+log(3)+log(2)+log(191)+log(1))/log(3)", 
+               
+               Defer[(Log[2] + Log[2] + Log[3] + Log[2] + Log[191] + Log[1])/
+                Log[3]], "Fast parse"]; Typeset`open$$ = False),
+            ContentPadding->False,
+            Evaluator->Automatic,
+            Method->"Queued"], 
+           ItemBox[
+            ButtonBox[
+             PaneSelectorBox[{True->
+              TagBox[
+               TooltipBox[
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "WABitmaps", "OrangeSquarePlus"],
+                 ImageSizeCache->{11., {2., 9.}}],
+                DynamicBox[
+                 ToBoxes[
+                  FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"], 
+                  StandardForm]]],
+               Annotation[#, 
+                Dynamic[
+                 FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"]], 
+                "Tooltip"]& ], False->
+              TagBox[
+               TooltipBox[
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "WABitmaps", "GraySquarePlus"],
+                 ImageSizeCache->{11., {2., 9.}}],
+                DynamicBox[
+                 ToBoxes[
+                  FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"], 
+                  StandardForm]]],
+               Annotation[#, 
+                Dynamic[
+                 FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"]], 
+                "Tooltip"]& ]}, Dynamic[WolframAlphaClient`Private`show$$],
+              ImageSize->All],
+             Appearance->None,
+             ButtonFunction:>(Quiet[
+                WolframAlpha[]]; If[
+                Or[
+                 CurrentValue["OptionKey"], 
+                 CurrentValue["AltKey"]], SelectionMove[
+                  ButtonNotebook[], All, ButtonCell, AutoScroll -> False]; 
+                NotebookWrite[
+                  ButtonNotebook[], 
+                  Cell[
+                  Typeset`newq$$, "WolframAlphaShort", FormatType -> 
+                   "TextForm"], All], Typeset`open$$ = True; 
+                WolframAlphaClient`Private`extrudeFromFastParse[
+                 "(log(2)+log(2)+log(3)+log(2)+log(191)+log(1))/log(3)", 
+                  Defer[(Log[2] + Log[2] + Log[3] + Log[2] + Log[191] + 
+                    Log[1])/Log[3]], "Fast parse"]; Typeset`open$$ = False]),
+             Evaluator->Automatic,
+             Method->"Queued"],
+            Alignment->{Right, Top},
+            StripOnInput->False]},
+          {
+           PaneBox[
+            TagBox[
+             TooltipBox[
+              ButtonBox[
+               PaneSelectorBox[{False->
+                StyleBox[
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "3", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "191", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "1", "]"}]}], ")"}], "/", 
+                  RowBox[{"Log", "[", "3", "]"}]}],
+                 StripOnInput->False,
+                 NumberMarks->False], True->
+                StyleBox[
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "3", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "191", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "1", "]"}]}], ")"}], "/", 
+                  RowBox[{"Log", "[", "3", "]"}]}],
+                 StripOnInput->False,
+                 ShowSyntaxStyles->False,
+                 NumberMarks->False,
+                 FontColor->RGBColor[1, 0.5, 0]]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                BaseStyle->{ShowStringCharacters -> True},
+                FrameMargins->0,
+                ImageSize->Automatic],
+               Alignment->Left,
+               Appearance->None,
+               BaseStyle->{},
+               ButtonFunction:>(SelectionMove[
+                  ButtonNotebook[], All, ButtonCell]; NotebookWrite[
+                  ButtonNotebook[], 
+                  Cell[
+                   BoxData[
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "3", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "191", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "1", "]"}]}], ")"}], "/", 
+                    RowBox[{"Log", "[", "3", "]"}]}]], "Input"], All]; 
+                SelectionMove[
+                  ButtonNotebook[], After, CellContents]),
+               Evaluator->Automatic,
+               ImageSize->Automatic,
+               Method->"Preemptive"],
+              DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource["WAStrings", "RemoveResults"], 
+                StandardForm]]],
+             Annotation[#, 
+              Dynamic[
+               FEPrivate`FrontEndResource["WAStrings", "RemoveResults"]], 
+              "Tooltip"]& ],
+            AppearanceElements->{},
+            BaseStyle->{ShowStringCharacters -> True, ScriptLevel -> 0},
+            ImageSize->{Automatic, {1, 100}},
+            Scrollbars->{False, Automatic}], "\[SpanFromLeft]", 
+           "\[SpanFromLeft]"}
+         },
+         AutoDelete->False,
+         BaselinePosition->{1, 1},
+         FrameStyle->GrayLevel[0.85],
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxDividers->{
+          "Columns" -> {{False}}, "Rows" -> {False, {True}, False}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+        "Grid"],
+       Alignment->Top,
+       Background->Dynamic[
+         FEPrivate`If[
+          FEPrivate`And[
+           FEPrivate`SameQ[
+            FEPrivate`Head[Typeset`newq$$], String], 
+           FEPrivate`UnsameQ[Typeset`q$$, Typeset`newq$$]], 
+          RGBColor[1., 0.975, 0.95], 
+          GrayLevel[1]]],
+       BaselinePosition->Baseline,
+       FrameStyle->GrayLevel[0.85],
+       ImageSize->Automatic,
+       RoundingRadius->5,
+       StripOnInput->False],
+      EventHandlerTag[{
+       "MouseEntered" :> 
+        FEPrivate`Set[WolframAlphaClient`Private`show$$, True], "MouseExited" :> 
+        FEPrivate`Set[WolframAlphaClient`Private`show$$, False], Method -> 
+        "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]],
+     DynamicModuleValues:>{}], True->
+    TagBox[GridBox[{
+       {
+        DynamicModuleBox[{WolframAlphaClient`Private`show$$ = False, 
+         WolframAlphaClient`Private`assumptionsQ$$ = True}, 
+         TagBox[
+          FrameBox[
+           TagBox[GridBox[{
+              {
+               InputFieldBox[Dynamic[Typeset`newq$$], String,
+                Appearance->None,
+                BaseStyle->{"CalculateInput"},
+                ContinuousAction->True,
+                Enabled->True,
+                FieldSize->{{1, 40}, {1, 
+                   DirectedInfinity[1]}},
+                TrapSelection->False], 
+               ButtonBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox["\<\"\[RightGuillemet]\"\>",
+                   StripOnInput->False,
+                   LineColor->RGBColor[1, 0.5, 0],
+                   FrontFaceColor->RGBColor[1, 0.5, 0],
+                   BackFaceColor->RGBColor[1, 0.5, 0],
+                   GraphicsColor->RGBColor[1, 0.5, 0],
+                   FontColor->RGBColor[1, 0.5, 0]],
+                  DynamicBox[
+                   ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "WAStrings", "InterpretationAssumptions"], StandardForm]]],
+                 Annotation[#, 
+                  Dynamic[
+                   FEPrivate`FrontEndResource[
+                   "WAStrings", "InterpretationAssumptions"]], "Tooltip"]& ],
+                Appearance->None,
+                BaselinePosition->Baseline,
+                ButtonFunction:>(Quiet[
+                   WolframAlpha[]]; Typeset`open$$ = True; 
+                 WolframAlphaClient`Private`extrudeFromFastParse[
+                  "(log(2)+log(2)+log(3)+log(2)+log(191)+log(1))/log(3)", 
+                   
+                   Defer[(Log[2] + Log[2] + Log[3] + Log[2] + Log[191] + 
+                    Log[1])/Log[3]], "Fast parse"]; Typeset`open$$ = False),
+                ContentPadding->False,
+                Evaluator->Automatic,
+                Method->"Queued"], 
+               ItemBox[
+                ButtonBox[
+                 PaneSelectorBox[{True->
+                  TagBox[
+                   TooltipBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WABitmaps", "OrangeSquarePlus"]],
+                    DynamicBox[
+                    ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"],
+                     StandardForm]]],
+                   Annotation[#, 
+                    Dynamic[
+                    FEPrivate`FrontEndResource[
+                    "WAStrings", "ShowAllResults"]], "Tooltip"]& ], False->
+                  TagBox[
+                   TooltipBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WABitmaps", "GraySquarePlus"]],
+                    DynamicBox[
+                    ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"],
+                     StandardForm]]],
+                   Annotation[#, 
+                    Dynamic[
+                    FEPrivate`FrontEndResource[
+                    "WAStrings", "ShowAllResults"]], "Tooltip"]& ]}, Dynamic[
+                  WolframAlphaClient`Private`show$$],
+                  ImageSize->All],
+                 Appearance->None,
+                 ButtonFunction:>(Quiet[
+                    WolframAlpha[]]; If[
+                    Or[
+                    CurrentValue["OptionKey"], 
+                    CurrentValue["AltKey"]], SelectionMove[
+                    ButtonNotebook[], All, ButtonCell, AutoScroll -> False]; 
+                    NotebookWrite[
+                    ButtonNotebook[], 
+                    Cell[
+                    Typeset`newq$$, "WolframAlphaShort", FormatType -> 
+                    "TextForm"], All], Typeset`open$$ = True; 
+                    WolframAlphaClient`Private`extrudeFromFastParse[
+                    "(log(2)+log(2)+log(3)+log(2)+log(191)+log(1))/log(3)", 
+                    
+                    Defer[(Log[2] + Log[2] + Log[3] + Log[2] + Log[191] + 
+                    Log[1])/Log[3]], "Fast parse"]; Typeset`open$$ = False]),
+                 Evaluator->Automatic,
+                 Method->"Queued"],
+                Alignment->{Right, Top},
+                StripOnInput->False]},
+              {
+               PaneBox[
+                TagBox[
+                 TooltipBox[
+                  ButtonBox[
+                   PaneSelectorBox[{False->
+                    StyleBox[
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "3", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "191", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "1", "]"}]}], ")"}], "/", 
+                    RowBox[{"Log", "[", "3", "]"}]}],
+                    StripOnInput->False,
+                    NumberMarks->False], True->
+                    StyleBox[
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "3", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "191", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "1", "]"}]}], ")"}], "/", 
+                    RowBox[{"Log", "[", "3", "]"}]}],
+                    StripOnInput->False,
+                    ShowSyntaxStyles->False,
+                    NumberMarks->False,
+                    FontColor->RGBColor[1, 0.5, 0]]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    BaseStyle->{ShowStringCharacters -> True},
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                   Alignment->Left,
+                   Appearance->None,
+                   BaseStyle->{},
+                   ButtonFunction:>(SelectionMove[
+                    ButtonNotebook[], All, ButtonCell]; NotebookWrite[
+                    ButtonNotebook[], 
+                    Cell[
+                    BoxData[
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "3", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "2", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "191", "]"}], " ", "+", " ", 
+                    RowBox[{"Log", "[", "1", "]"}]}], ")"}], "/", 
+                    RowBox[{"Log", "[", "3", "]"}]}]], "Input"], All]; 
+                    SelectionMove[
+                    ButtonNotebook[], After, CellContents]),
+                   Evaluator->Automatic,
+                   ImageSize->Automatic,
+                   Method->"Preemptive"],
+                  DynamicBox[
+                   ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "RemoveResults"], 
+                    StandardForm]]],
+                 Annotation[#, 
+                  Dynamic[
+                   FEPrivate`FrontEndResource["WAStrings", "RemoveResults"]], 
+                  "Tooltip"]& ],
+                AppearanceElements->{},
+                BaseStyle->{ShowStringCharacters -> True, ScriptLevel -> 0},
+                ImageSize->{Automatic, {1, 100}},
+                Scrollbars->{False, Automatic}], "\[SpanFromLeft]", 
+               "\[SpanFromLeft]"}
+             },
+             AutoDelete->False,
+             BaselinePosition->{1, 1},
+             FrameStyle->GrayLevel[0.85],
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxDividers->{
+              "Columns" -> {{False}}, "Rows" -> {False, {True}, False}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Grid"],
+           Alignment->Top,
+           Background->Dynamic[
+             FEPrivate`If[
+              FEPrivate`And[
+               FEPrivate`SameQ[
+                FEPrivate`Head[Typeset`newq$$], String], 
+               FEPrivate`UnsameQ[Typeset`q$$, Typeset`newq$$]], 
+              RGBColor[1., 0.975, 0.95], 
+              GrayLevel[1]]],
+           BaselinePosition->Baseline,
+           FrameStyle->GrayLevel[0.85],
+           ImageSize->Automatic,
+           RoundingRadius->5,
+           StripOnInput->False],
+          
+          EventHandlerTag[{
+           "MouseEntered" :> 
+            FEPrivate`Set[WolframAlphaClient`Private`show$$, True], 
+            "MouseExited" :> 
+            FEPrivate`Set[WolframAlphaClient`Private`show$$, False], Method -> 
+            "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]],
+         DynamicModuleValues:>{}]},
+       {
+        InterpretationBox[
+         StyleBox[
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEExpressions", "NecklaceAnimator"][20]],
+          AnimatorBoxOptions->{ImageSize->20}],
+         Animator[Appearance -> "Necklace", ImageSize -> 20],
+         BaseStyle->{"Deploy"}]}
+      },
+      BaselinePosition->{1, 1},
+      DefaultBaseStyle->"Column",
+      GridBoxAlignment->{"Columns" -> {{Left}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+     
+     "Column"]}, Dynamic[
+     TrueQ[Typeset`open$$]],
+    BaseStyle->{Deployed -> True},
+    ImageSize->Automatic],
+   DynamicModuleValues:>{}],
+  BaseStyle->{Deployed -> True},
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True]], "WolframAlphaShortInput",
+ CellLabel->"In[31]:=",ExpressionUUID->"bc4f263c-bfc8-435e-87a8-c850342a45b9"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   RowBox[{"3", " ", 
+    RowBox[{"Log", "[", "2", "]"}]}], "+", 
+   RowBox[{"Log", "[", "3", "]"}], "+", 
+   RowBox[{"Log", "[", "191", "]"}]}], 
+  RowBox[{"Log", "[", "3", "]"}]]], "Output",
+ CellChangeTimes->{3.842549368225939*^9},
+ CellLabel->"Out[31]=",ExpressionUUID->"bcb5a5b0-102f-49b4-88fb-873b604ac8a9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  FractionBox[
+   RowBox[{
+    RowBox[{"3", " ", 
+     RowBox[{"Log", "[", "2", "]"}]}], "+", 
+    RowBox[{"Log", "[", "3", "]"}], "+", 
+    RowBox[{"Log", "[", "191", "]"}]}], 
+   RowBox[{"Log", "[", "3", "]"}]], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[32]:=",ExpressionUUID->"c2bea2b4-e2bd-4dbf-ad93-c78f340d4fd6"],
+
+Cell[BoxData["7.673614563892224`"], "Output",
+ CellChangeTimes->{3.84254937087262*^9},
+ CellLabel->"Out[32]=",ExpressionUUID->"16e5a7de-46d1-4001-bdd9-b3f2ffab352f"]
+}, Open  ]],
+
+Cell[BoxData[
+ NamespaceBox["WolframAlphaQueryParseResults",
+  DynamicModuleBox[{Typeset`q$$ = "(x^7.67361) mod (8191)", Typeset`newq$$ = 
+   "(x^7.67361) mod (8191)", Typeset`chosen$$ = "Mod[x^7.67361, 8191]", 
+   Typeset`open$$ = False}, 
+   PaneSelectorBox[{False->
+    DynamicModuleBox[{WolframAlphaClient`Private`show$$ = False, 
+     WolframAlphaClient`Private`assumptionsQ$$ = False}, 
+     TagBox[
+      FrameBox[
+       TagBox[GridBox[{
+          {
+           InputFieldBox[Dynamic[Typeset`newq$$], String,
+            Appearance->None,
+            BaseStyle->{"CalculateInput"},
+            ContinuousAction->True,
+            Enabled->True,
+            FieldSize->{{1, 40}, {1, 
+               DirectedInfinity[1]}},
+            TrapSelection->False], 
+           ItemBox[
+            ButtonBox[
+             PaneSelectorBox[{True->
+              TagBox[
+               TooltipBox[
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "WABitmaps", "OrangeSquarePlus"],
+                 ImageSizeCache->{11., {2., 9.}}],
+                DynamicBox[
+                 ToBoxes[
+                  FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"], 
+                  StandardForm]]],
+               Annotation[#, 
+                Dynamic[
+                 FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"]], 
+                "Tooltip"]& ], False->
+              TagBox[
+               TooltipBox[
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "WABitmaps", "GraySquarePlus"],
+                 ImageSizeCache->{11., {2., 9.}}],
+                DynamicBox[
+                 ToBoxes[
+                  FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"], 
+                  StandardForm]]],
+               Annotation[#, 
+                Dynamic[
+                 FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"]], 
+                "Tooltip"]& ]}, Dynamic[WolframAlphaClient`Private`show$$],
+              ImageSize->All],
+             Appearance->None,
+             ButtonFunction:>(Quiet[
+                WolframAlpha[]]; If[
+                Or[
+                 CurrentValue["OptionKey"], 
+                 CurrentValue["AltKey"]], SelectionMove[
+                  ButtonNotebook[], All, ButtonCell, AutoScroll -> False]; 
+                NotebookWrite[
+                  ButtonNotebook[], 
+                  Cell[
+                  Typeset`newq$$, "WolframAlphaShort", FormatType -> 
+                   "TextForm"], All], Typeset`open$$ = True; 
+                WolframAlphaClient`Private`extrudeFromFastParse[
+                 "(x^7.67361) mod (8191)", 
+                  Defer[
+                   Mod[$CellContext`x^7.67361, 8191]], "Fast parse"]; 
+                Typeset`open$$ = False]),
+             Evaluator->Automatic,
+             Method->"Queued"],
+            Alignment->{Right, Top},
+            StripOnInput->False]},
+          {
+           PaneBox[
+            TagBox[
+             TooltipBox[
+              ButtonBox[
+               PaneSelectorBox[{False->
+                StyleBox[
+                 RowBox[{"Mod", "[", 
+                  RowBox[{
+                   RowBox[{"x", "^", "7.67361"}], ",", " ", "8191"}], "]"}],
+                 StripOnInput->False,
+                 NumberMarks->False], True->
+                StyleBox[
+                 RowBox[{"Mod", "[", 
+                  RowBox[{
+                   RowBox[{"x", "^", "7.67361"}], ",", " ", "8191"}], "]"}],
+                 StripOnInput->False,
+                 ShowSyntaxStyles->False,
+                 NumberMarks->False,
+                 FontColor->RGBColor[1, 0.5, 0]]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                BaseStyle->{ShowStringCharacters -> True},
+                FrameMargins->0,
+                ImageSize->Automatic],
+               Alignment->Left,
+               Appearance->None,
+               BaseStyle->{},
+               ButtonFunction:>(SelectionMove[
+                  ButtonNotebook[], All, ButtonCell]; NotebookWrite[
+                  ButtonNotebook[], 
+                  Cell[
+                   BoxData[
+                    RowBox[{"Mod", "[", 
+                    RowBox[{
+                    RowBox[{"x", "^", "7.67361"}], ",", " ", "8191"}], "]"}]],
+                    "Input"], All]; SelectionMove[
+                  ButtonNotebook[], After, CellContents]),
+               Evaluator->Automatic,
+               ImageSize->Automatic,
+               Method->"Preemptive"],
+              DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource["WAStrings", "RemoveResults"], 
+                StandardForm]]],
+             Annotation[#, 
+              Dynamic[
+               FEPrivate`FrontEndResource["WAStrings", "RemoveResults"]], 
+              "Tooltip"]& ],
+            AppearanceElements->{},
+            BaseStyle->{ShowStringCharacters -> True, ScriptLevel -> 0},
+            ImageSize->{Automatic, {1, 100}},
+            Scrollbars->{False, Automatic}], "\[SpanFromLeft]"}
+         },
+         AutoDelete->False,
+         BaselinePosition->{1, 1},
+         FrameStyle->GrayLevel[0.85],
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxDividers->{
+          "Columns" -> {{False}}, "Rows" -> {False, {True}, False}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+        "Grid"],
+       Alignment->Top,
+       Background->Dynamic[
+         FEPrivate`If[
+          FEPrivate`And[
+           FEPrivate`SameQ[
+            FEPrivate`Head[Typeset`newq$$], String], 
+           FEPrivate`UnsameQ[Typeset`q$$, Typeset`newq$$]], 
+          RGBColor[1., 0.975, 0.95], 
+          GrayLevel[1]]],
+       BaselinePosition->Baseline,
+       FrameStyle->GrayLevel[0.85],
+       ImageSize->Automatic,
+       RoundingRadius->5,
+       StripOnInput->False],
+      EventHandlerTag[{
+       "MouseEntered" :> 
+        FEPrivate`Set[WolframAlphaClient`Private`show$$, True], "MouseExited" :> 
+        FEPrivate`Set[WolframAlphaClient`Private`show$$, False], Method -> 
+        "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]],
+     DynamicModuleValues:>{}], True->
+    TagBox[GridBox[{
+       {
+        DynamicModuleBox[{WolframAlphaClient`Private`show$$ = False, 
+         WolframAlphaClient`Private`assumptionsQ$$ = False}, 
+         TagBox[
+          FrameBox[
+           TagBox[GridBox[{
+              {
+               InputFieldBox[Dynamic[Typeset`newq$$], String,
+                Appearance->None,
+                BaseStyle->{"CalculateInput"},
+                ContinuousAction->True,
+                Enabled->True,
+                FieldSize->{{1, 40}, {1, 
+                   DirectedInfinity[1]}},
+                TrapSelection->False], 
+               ItemBox[
+                ButtonBox[
+                 PaneSelectorBox[{True->
+                  TagBox[
+                   TooltipBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WABitmaps", "OrangeSquarePlus"]],
+                    DynamicBox[
+                    ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"],
+                     StandardForm]]],
+                   Annotation[#, 
+                    Dynamic[
+                    FEPrivate`FrontEndResource[
+                    "WAStrings", "ShowAllResults"]], "Tooltip"]& ], False->
+                  TagBox[
+                   TooltipBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WABitmaps", "GraySquarePlus"]],
+                    DynamicBox[
+                    ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"],
+                     StandardForm]]],
+                   Annotation[#, 
+                    Dynamic[
+                    FEPrivate`FrontEndResource[
+                    "WAStrings", "ShowAllResults"]], "Tooltip"]& ]}, Dynamic[
+                  WolframAlphaClient`Private`show$$],
+                  ImageSize->All],
+                 Appearance->None,
+                 ButtonFunction:>(Quiet[
+                    WolframAlpha[]]; If[
+                    Or[
+                    CurrentValue["OptionKey"], 
+                    CurrentValue["AltKey"]], SelectionMove[
+                    ButtonNotebook[], All, ButtonCell, AutoScroll -> False]; 
+                    NotebookWrite[
+                    ButtonNotebook[], 
+                    Cell[
+                    Typeset`newq$$, "WolframAlphaShort", FormatType -> 
+                    "TextForm"], All], Typeset`open$$ = True; 
+                    WolframAlphaClient`Private`extrudeFromFastParse[
+                    "(x^7.67361) mod (8191)", 
+                    Defer[
+                    Mod[$CellContext`x^7.67361, 8191]], "Fast parse"]; 
+                    Typeset`open$$ = False]),
+                 Evaluator->Automatic,
+                 Method->"Queued"],
+                Alignment->{Right, Top},
+                StripOnInput->False]},
+              {
+               PaneBox[
+                TagBox[
+                 TooltipBox[
+                  ButtonBox[
+                   PaneSelectorBox[{False->
+                    StyleBox[
+                    RowBox[{"Mod", "[", 
+                    RowBox[{
+                    RowBox[{"x", "^", "7.67361"}], ",", " ", "8191"}], "]"}],
+                    StripOnInput->False,
+                    NumberMarks->False], True->
+                    StyleBox[
+                    RowBox[{"Mod", "[", 
+                    RowBox[{
+                    RowBox[{"x", "^", "7.67361"}], ",", " ", "8191"}], "]"}],
+                    StripOnInput->False,
+                    ShowSyntaxStyles->False,
+                    NumberMarks->False,
+                    FontColor->RGBColor[1, 0.5, 0]]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    BaseStyle->{ShowStringCharacters -> True},
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                   Alignment->Left,
+                   Appearance->None,
+                   BaseStyle->{},
+                   ButtonFunction:>(SelectionMove[
+                    ButtonNotebook[], All, ButtonCell]; NotebookWrite[
+                    ButtonNotebook[], 
+                    Cell[
+                    BoxData[
+                    RowBox[{"Mod", "[", 
+                    RowBox[{
+                    RowBox[{"x", "^", "7.67361"}], ",", " ", "8191"}], "]"}]],
+                     "Input"], All]; SelectionMove[
+                    ButtonNotebook[], After, CellContents]),
+                   Evaluator->Automatic,
+                   ImageSize->Automatic,
+                   Method->"Preemptive"],
+                  DynamicBox[
+                   ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "RemoveResults"], 
+                    StandardForm]]],
+                 Annotation[#, 
+                  Dynamic[
+                   FEPrivate`FrontEndResource["WAStrings", "RemoveResults"]], 
+                  "Tooltip"]& ],
+                AppearanceElements->{},
+                BaseStyle->{ShowStringCharacters -> True, ScriptLevel -> 0},
+                ImageSize->{Automatic, {1, 100}},
+                Scrollbars->{False, Automatic}], "\[SpanFromLeft]"}
+             },
+             AutoDelete->False,
+             BaselinePosition->{1, 1},
+             FrameStyle->GrayLevel[0.85],
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxDividers->{
+              "Columns" -> {{False}}, "Rows" -> {False, {True}, False}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Grid"],
+           Alignment->Top,
+           Background->Dynamic[
+             FEPrivate`If[
+              FEPrivate`And[
+               FEPrivate`SameQ[
+                FEPrivate`Head[Typeset`newq$$], String], 
+               FEPrivate`UnsameQ[Typeset`q$$, Typeset`newq$$]], 
+              RGBColor[1., 0.975, 0.95], 
+              GrayLevel[1]]],
+           BaselinePosition->Baseline,
+           FrameStyle->GrayLevel[0.85],
+           ImageSize->Automatic,
+           RoundingRadius->5,
+           StripOnInput->False],
+          
+          EventHandlerTag[{
+           "MouseEntered" :> 
+            FEPrivate`Set[WolframAlphaClient`Private`show$$, True], 
+            "MouseExited" :> 
+            FEPrivate`Set[WolframAlphaClient`Private`show$$, False], Method -> 
+            "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]],
+         DynamicModuleValues:>{}]},
+       {
+        InterpretationBox[
+         StyleBox[
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEExpressions", "NecklaceAnimator"][20]],
+          AnimatorBoxOptions->{ImageSize->20}],
+         Animator[Appearance -> "Necklace", ImageSize -> 20],
+         BaseStyle->{"Deploy"}]}
+      },
+      BaselinePosition->{1, 1},
+      DefaultBaseStyle->"Column",
+      GridBoxAlignment->{"Columns" -> {{Left}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+     
+     "Column"]}, Dynamic[
+     TrueQ[Typeset`open$$]],
+    BaseStyle->{Deployed -> True},
+    ImageSize->Automatic],
+   DynamicModuleValues:>{}],
+  BaseStyle->{Deployed -> True},
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True]], "WolframAlphaShortInput",
+ CellLabel->"In[38]:=",ExpressionUUID->"345bb91c-546d-4989-96c4-7134d450df0e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Mod", "[", 
+  RowBox[{
+   SuperscriptBox["x", "7.67361`"], ",", "8191"}], "]"}]], "Input",
+ CellChangeTimes->{3.842549489178054*^9},
+ CellLabel->"In[39]:=",ExpressionUUID->"47471e30-7789-4ea2-b194-89f3801ddc80"],
+
+Cell[BoxData[
+ RowBox[{"Mod", "[", 
+  RowBox[{
+   SuperscriptBox["x", "7.67361`"], ",", "8191"}], "]"}]], "Output",
+ CellChangeTimes->{3.842549489225853*^9},
+ CellLabel->"Out[39]=",ExpressionUUID->"7aa2991b-b3db-460c-bedd-082c64dc40e0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"Mod", "[", 
+    RowBox[{
+     SuperscriptBox["x", "7.67361`"], ",", "8191"}], "]"}], ",", 
+   RowBox[{"{", "x", "}"}]}], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[41]:=",ExpressionUUID->"ff7ab7ba-9c51-4c6e-9c5a-81ee1f4993fb"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NMaximize", "nrnum", 
+   "\"The function value \\!\\(\\*RowBox[{RowBox[{\\\"-\\\", \
+\\\"0.12308507527026037`\\\"}], \\\"+\\\", \
+RowBox[{\\\"0.202839522856305`\\\", \\\" \\\", \\\"\[ImaginaryI]\\\"}]}]\\) \
+is not a real number at \\!\\(\\*RowBox[{\\\"{\\\", \\\"x\\\", \\\"}\\\"}]\\) \
+= \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"-\\\", \
+\\\"0.8290525091498482`\\\"}], \\\"}\\\"}]\\).\"", 2, 41, 5, 
+   27456198772281641671, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.84254950518885*^9},
+ CellLabel->
+  "During evaluation of \
+In[41]:=",ExpressionUUID->"cf92dca0-5a6d-4b8e-a820-838b412e7894"],
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"Mod", "[", 
+    RowBox[{
+     SuperscriptBox["x", "7.67361`"], ",", "8191"}], "]"}], ",", 
+   RowBox[{"{", "x", "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.842549505202898*^9},
+ CellLabel->"Out[41]=",ExpressionUUID->"f6981b95-2560-4ff2-a2fa-415d231a3773"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NMaximize", "[", 
+  RowBox[{
+   RowBox[{"Mod", "[", 
+    RowBox[{
+     SuperscriptBox["x", "7.67361`"], ",", "8191"}], "]"}], ",", 
+   RowBox[{"{", "x", "}"}]}], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[42]:=",ExpressionUUID->"e183a30f-45fa-454b-bb54-c781e82f30e0"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NMaximize", "nrnum", 
+   "\"The function value \\!\\(\\*RowBox[{RowBox[{\\\"-\\\", \
+\\\"0.12308507527026037`\\\"}], \\\"+\\\", \
+RowBox[{\\\"0.202839522856305`\\\", \\\" \\\", \\\"\[ImaginaryI]\\\"}]}]\\) \
+is not a real number at \\!\\(\\*RowBox[{\\\"{\\\", \\\"x\\\", \\\"}\\\"}]\\) \
+= \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"-\\\", \
+\\\"0.8290525091498482`\\\"}], \\\"}\\\"}]\\).\"", 2, 42, 6, 
+   27456198772281641671, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.842549509357271*^9},
+ CellLabel->
+  "During evaluation of \
+In[42]:=",ExpressionUUID->"34d9a4af-9c19-4bd4-84f7-42de847b7828"],
+
+Cell[BoxData[
+ RowBox[{"NMaximize", "[", 
+  RowBox[{
+   RowBox[{"Mod", "[", 
+    RowBox[{
+     SuperscriptBox["x", "7.67361`"], ",", "8191"}], "]"}], ",", 
+   RowBox[{"{", "x", "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.842549509371869*^9},
+ CellLabel->"Out[42]=",ExpressionUUID->"13c8aee7-d06b-4c1f-bac6-3c9328b8b735"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Mod", "[", 
+    RowBox[{
+     SuperscriptBox["x", "7.67361`"], ",", "8191"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "8.089345809599598`"}], ",", "11.325084133439438`"}], 
+    "}"}]}], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[40]:=",ExpressionUUID->"2541c49c-6b2b-4fef-90ff-060e8d43420d"],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, 
+    TagBox[
+     {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
+      1.], LineBox[CompressedData["
+1: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
+       "]], LineBox[CompressedData["
+1:eJwBsQFO/iFib1JlAgAAABoAAAACAAAAucjPjHjvCUAA4hXHyUFeQIFwIdt0
+9AlAwEvNTV8hZUBE6OBuegEKQMAJApp6eXJAytdfloUbCkAQigP3lU2BQI1P
+HyqLKApAYFRGbVVqhUBQx969kDUKQBBHqxLVlIlA1rZd5ZtPCkBoNvGp2AmR
+QOKVWzSygwpA2JLyTZzemUClDRvIt5AKQPCCowEpJpxAaIXaW72dCkDoO0vn
+NnWeQO50WYPItwpAsM1BKhWVoUD6U1fS3usKQECFGlPjeKZAEhJTcAtUC0BA
+f9TWy4KwQJ+pAr0wYAtAOjc/DzApsUAsQbIJVmwLQIxABc2D0bFARnARo6CE
+C0CYRFN0DSizQHnOz9U1tQtAuEjJ8DTttUAGZn8iW8ELQBwYn4ygo7ZAkv0u
+b4DNC0A+ODDxI1y3QKwsjgjL5QtAurxo/YbTuEDgikw7YBYMQA5vE9tS3LtA
+bSL8h4UiDEDWxbsrEaS8QPq5q9SqLgxAVPi7MBJuvUCHUVsh0DoMQKYBFHlb
+Or5AFOkKbvVGDECUVwGf8gi/QHAPNgWSSAxAEjNZJYkkv0Dv/bKr
+       "]], 
+      LineBox[{{3.739984273159793, 314.3835874985416}, {3.748146464938246, 
+       734.2200681274007}, {3.754076983192185, 1043.1172859922262`}, {
+       3.7600075014461236`, 1355.2883268137302`}, {3.771868537954002, 
+       1989.5699010265635`}, {3.795590610969758, 3298.7294592184917`}, {
+       3.8020219775578816`, 3663.1845000959547`}, {3.808453344146005, 
+       4031.7771227219637`}, {3.8213160773222516`, 4781.5348960224765`}, {
+       3.8277474439103747`, 5162.780729779701}, {3.834178810498498, 
+       5548.325515387962}, {3.847041543674745, 6332.476834340065}, {
+       3.8534729102628686`, 6731.166625266207}, {3.8599042768509917`, 
+       7134.321887216342}, {3.8663356434391147`, 7541.985069507322}, {
+       3.8702387699115732`, 7791.60760627229}}], 
+      LineBox[{{4.17588143904405, 656.4954914433038}, {4.181472606257159, 
+       1255.0093490218642`}, {4.187903972845283, 1950.1005300850302`}, {
+       4.194335339433406, 2652.352091980836}, {4.2071980726096525`, 
+       4078.5872579794013`}, {4.213201663650755, 4754.304572907684}, {
+       4.219205254691859, 5436.478296137961}, {4.225208845732963, 
+       6125.1607991530545`}, {4.231212436774067, 6820.4048028753095`}, {
+       4.236693137832175, 7460.869846850175}}], 
+      LineBox[{{4.570058941902454, 1199.0755324653292`}, {4.579420717158078, 
+       3033.0302829711873`}, {4.591427899240285, 5422.13153336996}, {
+       4.597313256028103, 6608.478834552152}, {4.598895715966961, 
+       6929.198265817555}}], 
+      LineBox[{{5.379406478529931, 3562.1904913186445`}, {5.381189805957752, 
+       4593.401167890406}}], 
+      LineBox[{{6.930312811988728, 2951.504733556416}, {6.936006450599194, 
+       4452.363487640861}, {6.936184669886824, 5013.706544219051}}], 
+      LineBox[{{8.925958483974847, 6431.262153211981}, {8.932664433070874, 
+       5742.519873511046}, {8.93905581530925, 239.69921673461795`}}], 
+      LineBox[{{9.322146864160615, 697.988610137254}, {9.325628126680446, 
+       5946.598248615861}, {9.332070154444537, 5156.869752366096}, {
+       9.338512182208628, 5044.288383003324}, {9.34495420997272, 
+       5611.51050433144}, {9.34910511779664, 3047.7630605362356`}}], 
+      LineBox[{{9.711202760195846, 3663.2800103351474`}, {9.717837847431161, 
+       5009.334489174187}, {9.723852099648234, 4998.306499950588}, {
+       9.729866351865304, 5732.5829319134355`}, {9.735762369829091, 
+       3635.8272979408503`}, {9.741658387792878, 2260.3521988391876`}, {
+       9.747554405756665, 1608.6394360139966`}, {9.753450423720452, 
+       1683.1778409257531`}, {9.759346441684238, 2486.4632907658815`}, {
+       9.765242459648025, 4020.998724102974}, {9.77113847761181, 
+       6289.294156514108}, {9.77114027285622, 6344.965480044484}}], 
+      LineBox[{{10.095160867004195`, 648.7962568998337}, {10.101315483583859`,
+        872.9338304176927}, {10.107211501547646`, 206.47903952002525`}, {
+       10.113608367845616`, 3592.7802949622273`}, {10.116958639673333`, 
+       3428.2880286201835`}}], 
+      LineBox[{{10.900962093433824`, 4535.944917917252}, {10.905296049312224`,
+        5358.109019100666}, {10.907622951792995`, 1.4901161193847656`*^-8}, {
+       10.907622951792995`, 1.4901161193847656`*^-8}}], 
+      LineBox[CompressedData["
+1:eJwBQQG+/iFib1JlAgAAABMAAAACAAAAortgku1hDEAAlGH94qBrQEdHyaCK
+dwxAIItNxVvegkDU3njtr4MMQECJQVPssYlAYHYoOtWPDEDA9pAcgEyQQHql
+h9MfqAxAMEHJ4zdRl0CuA0YGtdgMQIjIUbXs6aJAO5v1UtrkDEAQ3+weKMek
+QMgypZ//8AxA+EYIqqWppkDiYQQ5SgkNQJjDk5iZfqpAFcDCa985DUDMyhi7
+5TSxQKJXcrgERg1ABM/P7z45skAu7yEFKlINQBTciO9sQLNASB6BnnRqDUDg
+lo0fYle1QHx8P9EJmw1AfP4ay2+ouUAJFO8dL6cNQGSQMoctxLpAlquealSz
+DUBcu8UD9+K7QCNDTrd5vw1AcNioW9MEvUCw2v0Dn8sNQPhwUbfJKb5AUoi7
+UiHSDUDcNGtxE8i+QEL3jX0=
+       "]], 
+      LineBox[{{3.99699942801383, 490.0531118714207}, {4.001394341789705, 
+       841.0332255598187}, {4.007825708377829, 1359.3040166474166`}, {
+       4.014257074965952, 1883.1548706572357`}, {4.027119808142199, 
+       2947.8011275321405`}, {4.033551174730323, 3488.699670860733}, {
+       4.039982541318446, 4035.3845625693793`}, {4.052845274494692, 
+       5146.32394693989}, {4.059276641082816, 5710.684700717764}, {
+       4.065708007670938, 6281.044329716242}, {4.072139374259062, 
+       6857.456958089664}, {4.078570740847185, 7439.977111612861}, {
+       4.080573024680021, 7622.589048117508}}], 
+      LineBox[{{4.374266500109941, 895.0547553837823}, {4.381302212801657, 
+       1922.5767622306448`}, {4.387305803842761, 2808.113893054746}, {
+       4.3993129859249684`, 4603.62315354943}, {4.405316576966072, 
+       5513.722236796049}, {4.411320168007176, 6432.136268799673}, {
+       4.416476922050675, 7227.690767763532}}], 
+      LineBox[{{5.167806846289167, 2724.8375891550677`}, {5.17244929756477, 
+       4782.513861342915}, {5.1738879211418425`, 5422.661808693665}}], 
+      LineBox[{{5.5685719209354625`, 3670.741170213907}, {5.5685719209354625`,
+        3670.741170213907}}], 
+      LineBox[{{5.955083220303269, 7023.301988721825}, {5.964844247361151, 
+       1814.323447811883}, {5.9694317700438795`, 7107.771282819798}}], 
+      LineBox[{{7.144636031829927, 2359.9465563166887`}, {7.144636031829927, 
+       2359.9465563166887`}}], 
+      LineBox[{{7.4950196110929435`, 8043.989282928407}, {7.502154766250922, 
+       4904.967785883695}, {7.508141107146949, 4053.987153316848}, {
+       7.514127448042977, 3373.2668909057975`}, {7.520113788939005, 
+       2863.5786321097985`}, {7.526100129835032, 2525.6968888156116`}, {
+       7.532086470731059, 2360.399059774354}, {7.538072811627087, 
+       2368.4654390513897`}, {7.544059152523115, 2550.6792244771495`}, {
+       7.550045493419142, 2907.8265261501074`}, {7.556031834315169, 
+       3440.696374949068}, {7.562018175211197, 4150.080731047317}, {
+       7.568004516107225, 5036.7744924444705`}, {7.573934840982907, 
+       5784.201114131138}}], 
+      LineBox[{{7.9369795992864765`, 6860.261691652238}, {7.943712964896951, 
+       1812.2109685810283`}, {7.950200154127163, 3323.980919743888}, {
+       7.956687343357375, 5112.361139108427}, {7.957111590701091, 
+       262.0202483283356}}], 
+      LineBox[{{8.34892800278603, 6355.131831496954}, {8.34892800278603, 
+       6355.131831496954}}], 
+      LineBox[{{10.315305043008347`, 6834.292988687754}, {10.315305043008347`,
+        6834.292988687754}}], 
+      LineBox[{{11.114606673123506`, 2215.903933480382}, {11.118521541586183`,
+        2686.1030624210835`}, {11.125184838219745`, 1532.387708261609}, {
+       11.131848134853307`, 2342.3869963288307`}, {11.134134117906129`, 
+       7859.50058503449}}], 
+      LineBox[{{3.8826204216609606`, 403.6718962631712}, {3.885629743203485, 
+       601.4516215573749}, {3.8920611097916087`, 1027.5776459576373`}, {
+       3.8984924763797317`, 1458.4288558743574`}, {3.9049238429678548`, 
+       1894.0497224386854`}, {3.9113552095559783`, 2334.4850609822824`}, {
+       3.9242179427322252`, 3229.980148888986}, {3.9306493093203487`, 
+       3685.1312687793543`}, {3.9370806759084718`, 4145.279605930824}, {
+       3.9499434090847183`, 5080.754560411609}, {3.956374775672842, 
+       5556.175386291761}, {3.9628061422609653`, 6036.7818508367345`}, {
+       3.9692375088490888`, 6522.621962371566}, {3.975668875437212, 
+       7013.7440947458235`}, {3.982100242025335, 7510.1969895177535`}, {
+       3.9846177762644426`, 7705.99402595729}}], 
+      LineBox[{{5.068198719359257, 2392.747718045721}, {5.0702700156127225`, 
+       3197.667332773388}, {5.0766562207347254`, 5693.243832541921}, {
+       5.076803941416119, 5751.217924448865}}], 
+      LineBox[{{5.47372610395641, 4000.5798811199493`}, {5.473970159544852, 
+       4158.911014500773}}], 
+      LineBox[{{5.8628158645662065`, 5551.368914422113}, {5.8628158645662065`,
+        5551.368914422113}}], 
+      LineBox[{{7.0394748752798675`, 2986.8003542637452`}, {
+       7.0394748752798675`, 2986.8003542637452`}}], 
+      LineBox[{{8.240774509645474, 4106.116537807509}, {8.246719110664342, 
+       6059.107204832137}, {8.253088065641268, 4370.783332874998}, {
+       8.259457020618196, 3012.085793653503}, {8.265825975595122, 
+       1984.4604133125395`}, {8.272194930572049, 1289.3582380134612`}, {
+       8.278563885548976, 928.2355486955494}, {8.284932840525903, 
+       902.5538758374751}, {8.291301795502829, 1213.7800144441426`}, {
+       8.297670750479757, 1863.3860388807952`}, {8.304039705456683, 
+       2852.8493177369237`}, {8.310408660433609, 4183.652528900653}, {
+       8.316777615410537, 5857.283674484119}, {8.318525186146374, 
+       7974.804825406522}}], 
+      LineBox[{{9.031841721890853, 6817.94749321416}, {9.035736877296337, 
+       4651.963429924101}, {9.035956807449763, 507.1681392788887}}], 
+      LineBox[{{9.418275914355199, 2427.3485667034984`}, {9.429153741011723, 
+       5239.379749566317}, {9.435167993228795, 5153.599690135568}, {
+       9.441182245445866, 5695.984289899468}, {9.447000486821869, 
+       2015.4626492410898`}}], 
+      LineBox[{{10.211738730327227`, 3241.547248221934}, {10.215958228613152`,
+        7102.74843711406}, {10.21820549919813, 2676.9053868874907`}}], 
+      LineBox[{{10.61324666028872, 1862.9494374245405`}, {10.61324666028872, 
+       1862.9494374245405`}}], 
+      LineBox[{{11.001058482281065`, 4986.415523514152}, {11.005245498815642`,
+        5104.298406720161}, {11.011908795449202`, 4335.8880963772535`}, {
+       11.017834029718056`, 3547.216213941574}}], 
+      LineBox[{{4.092954676429407, 574.1864442810038}, {4.097864840611556, 
+       1033.7340543251921`}, {4.104296207199679, 1641.23768067715}, {
+       4.110727573787803, 2255.127567569303}, {4.117158940375926, 
+       2875.4606999630487`}, {4.130021673552172, 4135.686734514886}, {
+       4.136453040140296, 4775.69570724589}, {4.1428844067284185`, 
+       5422.380071471591}, {4.1557471399046655`, 6736.011805369031}, {
+       4.162178506492789, 7403.078668844013}, {4.163499787294664, 
+       7540.977233347221}}], 
+      LineBox[{{4.479292781298826, 1048.7306309088453`}, {4.489366851541524, 
+       2776.09286955632}, {4.495370442582627, 3817.8783944807947`}, {
+       4.50137403362373, 4868.990474222097}, {4.507377624664834, 
+       5929.499998162486}, {4.513381215705937, 6999.478298938513}, {
+       4.513813830950835, 7076.947959965182}}], 
+      LineBox[{{5.272544022716612, 3115.5056041421485`}, {5.2763359971672, 
+       5035.892962856626}}], 
+      LineBox[{{5.663581448680773, 3130.780058840406}, {5.663581448680773, 
+       3130.780058840406}}], 
+      LineBox[{{6.464494213465241, 3958.3288264179137`}, {6.464593355107389, 
+       4153.524209500523}}], 
+      LineBox[{{6.755851188144382, 8116.292888098396}, {6.7645216754421735`, 
+       6550.550561187789}, {6.770434943551036, 5972.764393226709}, {
+       6.776348211659899, 5487.365231310017}, {6.782261479768762, 
+       5094.811816413887}, {6.788174747877624, 4795.564764238894}, {
+       6.794088015986487, 4590.086571226362}, {6.80000128409535, 
+       4478.841620591935}, {6.805914552204213, 4462.296188366599}, {
+       6.811827820313075, 4540.9184494582005`}, {6.817741088421938, 
+       4715.17848372506}, {6.823654356530801, 4985.548282060772}, {
+       6.8295676246396635`, 5352.501752498094}, {6.835480892748526, 
+       5816.514726323076}, {6.841394160857389, 6378.064964205027}, {
+       6.847165848130841, 6628.458469613921}}], 
+      LineBox[{{7.636937476191598, 4204.549705412239}, {7.639815261165743, 
+       5075.478229391389}}], 
+      LineBox[{{8.04273521263457, 3086.9660012107342`}, {8.043037217689573, 
+       5641.901913909242}}], 
+      LineBox[{{8.44973411816369, 7095.260515853763}, {8.450525669925998, 
+       24.420812875032425`}, {8.453879394311317, 6775.4913196489215`}}], 
+      LineBox[{{8.839231649622995, 8013.881902914494}, {8.842812767189251, 
+       7641.716404993087}}], 
+      LineBox[{{9.242562665894004, 1103.8788675256073`}, {9.246634673987487, 
+       6444.538484957069}}], 
+      LineBox[{{9.635263216165455, 4974.204318545759}, {9.635263216165455, 
+       4974.204318545759}}], 
+      LineBox[{{10.41432962204564, 5323.943782351911}, {10.41432962204564, 
+       5323.943782351911}}], 
+      LineBox[{{10.789132015643233`, 2654.5808284133673`}, {
+       10.797158209912492`, 2819.035587504506}, {10.803127300663443`, 
+       3503.432171806693}, {10.809073879395338`, 4152.399255156517}}], 
+      LineBox[{{11.223320319943426`, 8035.804494783282}, {11.225134287723161`,
+        2491.76687528193}, {11.231797584356723`, 805.923190459609}, {
+       11.238460880990285`, 1192.9809357225895`}, {11.240231117213531`, 
+       1668.6528246849775`}}], 
+      LineBox[{{4.249074789581561, 737.2745302730764}, {4.255226800938482, 
+       1477.0625763428689`}, {4.261230391979586, 2205.917256312692}, {
+       4.26723398302069, 2941.6572037250444`}, {4.2792411651028965`, 
+       4434.014139681109}, {4.2852447561439995`, 5190.742660203148}, {
+       4.291248347185103, 5954.579515904159}, {4.297251938226207, 
+       6725.581393866247}, {4.302319971885108, 7382.055060624072}}], 
+      LineBox[{{5.02439541204995, 2257.9958977944916`}, {5.025566579758702, 
+       2687.2520721495675`}, {5.031952784880705, 5039.700151634839}, {
+       5.034232934459113, 5884.465120906214}}], 
+      LineBox[{{5.810070974165112, 2191.132128902478}, {5.810070974165112, 
+       2191.132128902478}}], 
+      LineBox[{{8.19955104001298, 2083.0383066162467`}, {8.201628389740547, 
+       5706.799325786531}}], 
+      LineBox[{{9.782857874433715, 2575.523273050785}, {9.782857874433715, 
+       2575.523273050785}}], 
+      LineBox[{{10.163973781715105`, 3508.4511483982205`}, {
+       10.164783298229384`, 3410.0137239173055`}, {10.168016728488887`, 
+       3002.489179380238}}], 
+      LineBox[{{10.563193618827018`, 2887.2957485467196`}, {
+       10.569147525518767`, 2821.57603366673}}], 
+      LineBox[{{10.944450905295092`, 7058.186098590493}, {10.94527582911359, 
+       4259.04905731976}, {10.951939125747153`, 3479.8905368596315`}, {
+       10.958602422380714`, 4497.143609508872}, {10.965265719014274`, 
+       7317.018120780587}, {10.970354478308227`, 4461.607330948114}}], 
+      LineBox[{{4.428858573800062, 972.3503179651307}, {4.43533453217159, 
+       1999.2379981356207`}, {4.447341714253797, 3929.8751073273306`}, {
+       4.453345305294901, 4908.322871158598}, {4.459348896336005, 
+       5895.613194129823}, {4.465352487377109, 6891.813923110269}, {
+       4.466911129549439, 7151.911213973974}}], 
+      LineBox[{{4.817693466231141, 1705.6461022499425`}, {4.82684217075303, 
+       4253.148934350873}, {4.8327275275408486`, 5909.074611984863}, {
+       4.834569363572263, 6430.072154818859}}], 
+      LineBox[{{5.221928960510283, 2921.1549712427077`}, {5.226784194226989, 
+       5228.33457568835}}], 
+      LineBox[{{7.98899150645803, 800.4806665852666}, {7.991781774299433, 
+       7014.459525205195}}], 
+      LineBox[{{9.145387048641393, 290.9386793449521}, {9.15169337704998, 
+       3452.9470660761}, {9.158135404814072, 1735.5972248390317`}, {
+       9.164577432578163, 626.8367521166801}, {9.171019460342254, 
+       129.09848545119166`}, {9.177461488106346, 244.82326788455248`}, {
+       9.183903515870437, 976.4599686786532}, {9.190345543634528, 
+       2326.4655040204525`}, {9.19678757139862, 4297.304857801646}, {
+       9.197101264899908, 2599.9201560691}}], 
+      LineBox[{{9.561368244247298, 1916.6360617615283`}, {9.56748154200437, 
+       2462.010832116008}, {9.573495794221442, 1029.788701787591}, {
+       9.579510046438514, 279.80454214662313`}, {9.585524298655585, 
+       214.49360506236553`}, {9.591538550872656, 836.2982985600829}, {
+       9.597552803089728, 2147.668203175068}, {9.6035670553068, 
+       4151.060088448226}, {9.604619222231372, 468.4384037107229}}], 
+      LineBox[{{10.357350344845734`, 4160.488965123892}, {10.363086153466483`,
+        4936.426630370319}, {10.369483019764454`, 4394.0770415738225`}, {
+       10.375879886062425`, 5065.96910328418}, {10.378577237170951`, 
+       7188.913187764585}}], 
+      LineBox[{{11.165533404163114`, 6598.218314558268}, {11.165533404163114`,
+        6598.218314558268}}], 
+      LineBox[{{4.314701623634495, 816.739376710495}, {4.321266302390622, 
+       1691.3859254634299`}, {4.327269893431725, 2499.076303364782}, {
+       4.333273484472828, 3314.279702428452}, {4.339277075513932, 
+       4137.055453244859}, {4.35128425759614, 5805.5632615533395`}, {
+       4.3572878486372435`, 6651.4159151856}, {4.361884848360554, 
+       7304.371144038101}}], 
+      LineBox[{{4.722002352838609, 1491.7782899355516`}, {4.732676462147932, 
+       4094.718427549087}, {4.73856181893575, 5546.745538057963}, {
+       4.742965004967371, 6640.992134132306}}], 
+      LineBox[{{5.522620810652145, 3913.785719082807}, {5.522620810652145, 
+       3913.785719082807}}], 
+      LineBox[{{5.913238232947408, 1443.740727674216}, {5.913238232947408, 
+       1443.740727674216}}], 
+      LineBox[{{6.684782584053985, 7004.580086915754}, {6.693562458135819, 
+       4143.72222360922}, {6.699475726244682, 2492.3995313839987`}, {
+       6.702083894694883, 826.299257195089}}], 
+      LineBox[{{7.095448998974017, 6243.178574749269}, {7.095601219715409, 
+       6801.150696435943}}], 
+      LineBox[{{9.088074545571835, 3359.733496874571}, {9.088074545571835, 
+       3359.733496874571}}], 
+      LineBox[{{9.863060373054367, 7347.9164931848645`}, {9.871370782996182, 
+       3953.411220282316}, {9.87726680095997, 3484.761777110398}, {
+       9.883162818923754, 3798.928333930671}, {9.888805673843372, 
+       4585.256782770157}}], 
+      LineBox[{{10.26035552461579, 3334.8738766238093`}, {10.260736292698947`,
+        3314.1663366034627`}, {10.261504828541074`, 3585.8666493818164`}}], 
+      LineBox[{{10.661293320975549`, 7023.29930396378}, {10.664396298595404`, 
+       7358.830099493265}}], 
+      LineBox[{{4.5261954827002215`, 1124.2817197968689`}, {4.537395579870353,
+        3184.5215590970765`}, {4.5433991709114565`, 4302.929400242501}, {
+       4.54940276195256, 5431.243444770313}, {4.555406352993664, 
+       6569.538189453058}, {4.557677290153068, 7002.730301245945}}], 
+      LineBox[{{6.120110361852415, 238.60385624784976`}, {6.126326195090341, 
+       568.7037153907586}, {6.12744444146241, 2107.8089700890705`}}], 
+      LineBox[{{6.505487381742717, 4482.075090955943}, {6.512972237237719, 
+       3529.983709995402}}], 
+      LineBox[{{8.501845204665203, 1947.176268460229}, {8.504821985916204, 
+       5697.446466472}}], 
+      LineBox[{{8.873998593099083, 2428.1345972828567`}, {8.885134997631617, 
+       4591.623848948628}, {8.891076177061525, 4215.992317672819}, {
+       8.897017356491432, 4277.9867654666305`}, {8.90295853592134, 
+       4779.268916487694}, {8.908899715351247, 5721.505689088255}, {
+       8.913576832225461, 2243.6783611364663`}}], 
+      LineBox[{{10.439793605047386`, 3141.390628002584}, {10.446245415340103`,
+        3721.760784499347}, {10.452642281638074`, 2918.0521982088685`}, {
+       10.459039147936046`, 3384.8790335059166`}, {10.465436014234017`, 
+       5126.6591142863035`}, {10.465642931698115`, 7081.503941744566}}], 
+      LineBox[{{4.611277367716347, 1273.1730848248844`}, {4.6208546831793775`,
+        3265.400020774716}, {4.6267400399671965`, 4503.387416613143}, {
+       4.6326253967550155`, 5751.92886237982}, {4.637789900371284, 
+       6856.300377741252}}], 
+      LineBox[{{5.788096002148047, 5808.509984767181}, {5.790443743813627, 
+       8022.134361574543}, {5.790443743813627, 8022.134361574543}}], 
+      LineBox[{{6.198857503292954, 6075.686113287928}, {6.198857503292954, 
+       6075.686113287928}}], 
+      LineBox[{{6.961411140939639, 3538.161066253204}, {6.961662916371383, 
+       4350.801647340413}, {6.961717923853794, 4528.3721342151985`}}], 
+      LineBox[{{7.374692748749604, 3323.197997648269}, {7.374692748749604, 
+       3323.197997648269}}], 
+      LineBox[{{7.760693832134523, 201.81092466786504`}, {7.762071666451023, 
+       1200.550953491591}, {7.762071666451023, 1200.550953491591}}], 
+      LineBox[{{8.577708947746347, 1232.8650523386896`}, {8.577708947746347, 
+       1232.8650523386896`}}], 
+      LineBox[{{8.959508373846543, 896.2473713941872}, {8.964874571891333, 
+       4272.882315639406}, {8.971316599655424, 2311.475250545889}, {
+       8.977758627419515, 891.4960409142077}, {8.984009134612288, 
+       4815.104101549834}}], 
+      LineBox[{{10.133081549710049`, 6685.850142017007}, {10.135733575988196`,
+        5128.972862742841}}], 
+      LineBox[{{4.787198134924415, 1634.8309381131257`}, {4.797415386813936, 
+       4363.9736863496655`}, {4.8033007436017545`, 5953.720928938594}, {
+       4.805311814481755, 6499.937139556219}}], 
+      LineBox[{{8.769736555178934, 5605.140746187419}, {8.769736555178934, 
+       5605.140746187419}}], 
+      LineBox[{{9.944132808217065, 5931.201618134975}, {9.944132808217065, 
+       5931.201618134975}}], 
+      LineBox[{{4.687006190324623, 1419.481901553605}, {4.69736432142102, 
+       3822.629156689218}, {4.703249678208839, 5203.909680046927}, {
+       4.709135034996658, 6596.773491380998}, {4.709620701089222, 
+       6712.234065870725}}], 
+      LineBox[{{5.089185593165506, 2459.6937015826115`}, {5.089428630978731, 
+       2556.6638067584718`}, {5.095814836100734, 5115.809365748311}, {
+       5.097227993582432, 5685.003215254226}}], 
+      LineBox[{{5.49865412257987, 4036.0784642712097`}, {5.49865412257987, 
+       4036.0784642712097`}}], 
+      LineBox[{{7.070430452662965, 5715.850880019367}, {7.0707028959031835`, 
+       6691.294002481271}, {7.0707028959031835`, 6691.294002481271}}], 
+      LineBox[{{7.465000544628167, 7181.656950037926}, {7.472223061770785, 
+       3495.969760647975}, {7.4782094026668124`, 1805.1616224832833`}, {
+       7.482637959343557, 326.4600729411468}}], 
+      LineBox[{{7.864638416659574, 4024.9025455266237`}, {7.865866694134411, 
+       4786.1746791843325`}, {7.872353883364623, 3076.934105457738}, {
+       7.878841072594835, 1629.2842913353816`}, {7.884589248225505, 
+       3158.4627767940983`}}], 
+      LineBox[{{8.671490553692108, 4424.772583058104}, {8.67719371758487, 
+       2413.650185778737}, {8.683134897014778, 4110.565177172422}, {
+       8.687642464854399, 2270.2646944001317`}}], 
+      LineBox[{{9.848285146350804, 5317.154497101903}, {9.85067872130498, 
+       1696.0768860206008`}}], 
+      LineBox[{{11.030215681467443`, 2408.91415271163}, {11.031898685349887`, 
+       4982.794801458716}, {11.035183784566236`, 4838.16951829195}}], 
+      LineBox[{{5.304567404745378, 3244.0592785961344`}, {5.306559605126831, 
+       4293.380217059457}, {5.307725267842237, 4908.572060971637}}], 
+      LineBox[{{6.859547499880227, 1671.0460994043387`}, {6.870960501401703, 
+       2474.7325700814836`}, {6.876873769510565, 3631.6481877728365`}, {
+       6.882787037619428, 4889.4999348321}, {6.88858168861824, 
+       5891.90015633218}}], 
+      LineBox[{{8.477427501950636, 508.1335968375206}, {8.477991395085981, 
+       7287.12997879833}}], 
+      LineBox[{{8.855194418938638, 1011.8430560007691`}, {8.86137027991199, 
+       2246.356365598738}, {8.861616941349697, 6231.029451411217}}], 
+      LineBox[{{10.829707351591182`, 5846.974868372083}, {10.829707351591182`,
+        5846.974868372083}}], 
+      LineBox[{{4.65017155212067, 1346.6267404029495`}, {4.65616682390629, 
+       2662.169888157572}, {4.662052180694108, 3964.636644232465}, {
+       4.667937537481927, 5278.122688949952}, {4.673822894269746, 
+       6602.707179325487}, {4.6746245385752365`, 6783.991997614707}}], 
+      LineBox[{{5.0466145862084995`, 2325.5186835828645`}, {5.051111400246714,
+        4026.677814482362}, {5.055817067609871, 5817.701947762223}}], 
+      LineBox[{{5.447875046221107, 3876.097885846859}, {5.448521121251693, 
+       4282.304820110789}}], 
+      LineBox[{{6.238877626122491, 1392.8742382910568`}, {6.247006527143577, 
+       5882.793666020269}}], 
+      LineBox[{{6.626189084143644, 6137.117225826252}, {6.631401576818733, 
+       1888.4422688453924`}}], 
+      LineBox[{{7.013389947729081, 3514.8009927594103`}, {7.013389947729081, 
+       3514.8009927594103`}}], 
+      LineBox[{{7.812639286475521, 2076.2868820307776`}, {7.813183005613061, 
+       5866.462598016486}}], 
+      LineBox[{{8.223276073924096, 3240.327563174069}, {8.227612245733562, 
+       4896.456544732675}, {8.228392857896088, 4392.388236809522}}], 
+      LineBox[{{8.618615796658357, 970.5706080123782}, {8.629664282145615, 
+       2436.4172938708216`}, {8.635605461575523, 1125.2007896862924`}, {
+       8.635941787227313, 5698.915770098567}}], 
+      LineBox[{{9.006027259718703, 4673.53673902154}, {9.009968766239972, 
+       1990.6107030659914`}, {9.016410794004063, 3865.858702816069}, {
+       9.019460070141466, 1890.5046205706894`}}], 
+      LineBox[{{9.80221688876633, 5605.2177604064345`}, {9.80221688876633, 
+       5605.2177604064345`}}], 
+      LineBox[{{10.180398380238273`, 6209.479126684368}, {10.183973897123298`,
+        4745.8561894744635`}, {10.190370763421269`, 4647.680102519691}, {
+       10.19676762971924, 5649.45227137953}, {10.19935707857784, 
+       5988.442877016962}}], 
+      LineBox[{{4.8469510153216495`, 1776.0214079165598`}, {4.856268954692123,
+        4477.845103635977}, {4.862154311479942, 6202.276844912994}, {
+       4.862692343126248, 6360.618449583766}}], 
+      LineBox[{{6.439038766899751, 3642.4531813082285`}, {6.439468698548064, 
+       4467.069792881375}}], 
+      LineBox[{{7.222461575353425, 897.4601700096391}, {7.224641690536314, 
+       1710.6994450064376`}, {7.224641690536314, 1710.6994450064376`}}], 
+      LineBox[{{8.017158815370879, 1987.9840904176235`}, {8.017633370455505, 
+       5918.524768270552}}], 
+      LineBox[{{8.811486245139234, 5976.1010711453855`}, {8.81503297884748, 
+       3885.1516639366746`}}], 
+      LineBox[{{10.390958888920338`, 2148.9232996851206`}, {
+       10.395070484956337`, 6218.716535203159}, {10.39616070766168, 
+       0.0511501282453537}, {10.39616070766168, 0.0511501282453537}}], 
+      LineBox[{{11.193722364542062`, 7785.2664381712675`}, {
+       11.198481101188918`, 5252.0955719053745`}, {11.202979105753787`, 
+       0.0007094889879226685}, {11.202979105753787`, 0.0007094889879226685}}],
+       LineBox[{{4.755346656716758, 1563.5509333350346`}, {4.762103246087024, 
+       3285.565014668042}, {4.767988602874843, 4798.8784268648305`}, {
+       4.773873959662662, 6324.709322452953}, {4.774816483175028, 
+       6570.235606885399}}], 
+      LineBox[{{5.148892584139228, 2658.9300733522978`}, {5.153290682198761, 
+       4560.898291458492}, {5.155425194539781, 5487.88577809569}}], 
+      LineBox[{{5.545913588068975, 3792.012823811383}, {5.545913588068975, 
+       3792.012823811383}}], 
+      LineBox[{{6.714465546444269, 7460.80133606866}, {6.723128798680133, 
+       4952.746589503251}, {6.729042066788995, 3740.9399067582563`}, {
+       6.734955334897858, 2618.361033039633}, {6.740868603006721, 
+       1585.4557535480708`}, {6.743469536394995, 174.22031971858814`}}], 
+      LineBox[{{7.115489226666772, 6673.256829688791}, {7.11852621285793, 
+       1650.3421840174124`}}], 
+      LineBox[{{7.8969708999748915`, 5273.953736651689}, {7.898302640285468, 
+       7059.156819215044}, {7.90478982951568, 6670.171135706827}, {
+       7.911277018745892, 6548.950487644412}, {7.917764207976104, 
+       6696.744018308818}, {7.924251397206316, 7114.805667291395}, {
+       7.92459794753709, 1579.1824347265065`}}], 
+      LineBox[{{9.109004336152763, 5247.820151180029}, {9.113041210465433, 
+       1829.187448207289}, {9.117327050634405, 3505.6841996237636`}}], 
+      LineBox[{{9.515175012929742, 2844.6848136670887`}, {9.515175012929742, 
+       2844.6848136670887`}}], 
+      LineBox[{{10.27388648029046, 5680.511843599379}, {10.27992689159286, 
+       5894.664827980101}, {10.28632375789083, 6330.931673109531}, {
+       10.289892453842539`, 6815.912204183638}}], 
+      LineBox[{{10.684099195321693`, 3757.782187014818}, {10.689681741604055`,
+        7263.709469914436}}], 
+      LineBox[{{5.350305510684356, 3435.4728151553427`}, {5.352606168685303, 
+       4718.954209578573}}], 
+      LineBox[{{6.146714869574016, 4354.101906460244}, {6.146714869574016, 
+       4354.101906460244}}], 
+      LineBox[{{6.536290811271989, 3219.9139657383785`}, {6.536290811271989, 
+       3219.9139657383785`}}], 
+      LineBox[{{6.9009633403676265`, 2411.3775738794357`}, {6.912353378163743,
+        4519.139858343173}, {6.917931160239341, 5354.511758213863}}], 
+      LineBox[{{7.325258156259683, 3417.766858505085}, {7.327267553625068, 
+       4345.910991426557}, {7.329106713248347, 4516.115051960573}}], 
+      LineBox[{{7.7057728396116545`, 3046.3500403733924`}, {
+       7.7057728396116545`, 3046.3500403733924`}}], 
+      LineBox[{{8.12093478640596, 6572.5257681217045`}, {8.124124396783907, 
+       2626.4327896963805`}}], 
+      LineBox[{{10.860610064090402`, 3002.8584822565317`}, {
+       10.868787298923905`, 1705.8925806581974`}, {10.874756389674857`, 
+       2294.222189337015}, {10.88072548042581, 4267.448712587357}, {
+       10.881256546137376`, 5268.618040680885}}], 
+      LineBox[{{11.299794404129418`, 5866.921800613403}, {11.305093847325896`,
+        5945.869174554944}, {11.309507316289068`, 0.000022709369659423828`}, {
+       11.309507316289068`, 0.000022709369659423828`}}], 
+      LineBox[{{4.97788129469547, 2122.022238949692}, {4.980863143904681, 
+       3150.410179279541}, {4.987249349026684, 5366.769453198271}, {
+       4.989117966271607, 6018.871835211146}}], 
+      LineBox[{{6.948566321636211, 3294.0408667032607`}, {6.9488346834852885`,
+        4149.613215218764}, {6.949029489190252, 4770.8171922126785`}}], 
+      LineBox[{{7.353948200532551, 4157.878511545248}, {7.3556866385843716`, 
+       4063.8358623171225`}}], 
+      LineBox[{{8.163080592226056, 340.7091566119343}, {8.163922695964295, 
+       17.872216507792473`}, {8.168294734435365, 7.84359872341156*^-6}, {
+       8.168294734435365, 7.84359872341156*^-6}}], 
+      LineBox[{{8.951437467058636, 252.1385619416833}, {8.951437467058636, 
+       252.1385619416833}}], 
+      LineBox[{{9.35799855339327, 4330.425992269069}, {9.35966766985717, 
+       2194.1499013379216`}}], 
+      LineBox[{{10.52732383426498, 3841.509044766426}, {10.52732383426498, 
+       3841.509044766426}}], 
+      LineBox[{{5.186269572891229, 2790.50611517817}, {5.191607912930778, 
+       5214.670142566843}, {5.191921668604305, 5357.666412624298}}], 
+      LineBox[{{5.983603751861503, 7250.97152616526}, {5.984222081088655, 
+       7977.9409375981195`}, {5.984222081088655, 7977.9409375981195`}}], 
+      LineBox[{{6.372287077676806, 2847.0944377097767`}, {6.377004056570847, 
+       3114.527624977287}}], 
+      LineBox[{{7.157228873318802, 1833.2666184692644`}, {7.157228873318802, 
+       1833.2666184692644`}}], 
+      LineBox[{{8.361309654535416, 2169.8000755272806`}, {8.36772925522595, 
+       7195.467644762248}, {8.36772925522595, 7195.467644762248}}], 
+      LineBox[{{9.546264242913026, 176.65079823881388`}, {9.548986592497911, 
+       6989.437206834555}}], 
+      LineBox[{{9.931422012730417, 6986.597141385078}, {9.931422012730417, 
+       6986.597141385078}}], 
+      LineBox[{{10.719640189740108`, 3363.000298306346}, {10.721059045490835`,
+        3139.582257643342}}], 
+      LineBox[{{5.879502527833491, 6449.139610536979}, {5.880873634541974, 
+       7883.597946958384}, {5.880873634541974, 7883.597946958384}}], 
+      LineBox[{{6.275319294168138, 1772.9013993141707`}, {6.282506813073234, 
+       5232.530959990574}}], 
+      LineBox[{{6.661071537737526, 6648.315454130061}, {6.669909385700368, 
+       3419.603340224363}, {6.6724009323045985`, 1280.1327377720736`}}], 
+      LineBox[{{7.051856527029254, 5331.15101588238}, {7.056750511603687, 
+       6204.140296006575}}], 
+      LineBox[{{7.840658526887605, 3117.1608236869797`}, {7.846405126443775, 
+       3280.2577493218705`}, {7.852256764910187, 4401.95534107741}}], 
+      LineBox[{{9.04833845919915, 15.67359983175993}, {9.04862093282452, 
+       5261.213872551918}, {9.052803862719172, 1156.3237358629704`}}], 
+      LineBox[{{10.223168319040672`, 5682.403357259929}, {10.223168319040672`,
+        5682.403357259929}}], 
+      LineBox[{{4.875073994875635, 1845.9794216492446`}, {4.885695738631216, 
+       5049.833787012438}, {4.88977131808509, 6291.55587246365}}], 
+      LineBox[{{5.288717648916586, 3179.880174013553}, {5.292185752995992, 
+       4972.138542752538}}], 
+      LineBox[{{5.67596310043016, 5097.227998003364}, {5.676077545918582, 
+       5191.806752530858}}], 
+      LineBox[{{7.651738529175174, 3302.7112749144435`}, {7.651738529175174, 
+       3302.7112749144435`}}], 
+      LineBox[{{8.05628526947008, 3677.2850724030286`}, {8.060482371040761, 
+       6879.502294152975}, {8.060482371040761, 6879.502294152975}}], 
+      LineBox[{{9.257099159950227, 2497.89860457927}, {9.25805859521033, 
+       6867.052906282246}}], 
+      LineBox[{{9.647644867914842, 3967.9943155795336`}, {9.650223387701494, 
+       3768.3037023991346`}}], 
+      LineBox[{{10.01408702938931, 4548.823061421514}, {10.024667250054634`, 
+       7468.338402055204}, {10.025926199023589`, 4660.66887101531}}], 
+      LineBox[{{10.4300452252671, 1288.6226480901241`}, {10.4300452252671, 
+       1288.6226480901241`}}], 
+      LineBox[{{5.434635788552306, 3813.6318490876}, {5.43549339447172, 
+       4344.219347243081}}], 
+      LineBox[{{7.797177381996027, 1510.9025095719844`}, {7.800257634726135, 
+       6341.851962435991}}], 
+      LineBox[{{8.214010041489933, 2786.0777856372297`}, {8.214010041489933, 
+       2786.0777856372297`}}], 
+      LineBox[{{9.402932867969959, 805.0242489054799}, {9.405894262605813, 
+       6420.056440025568}}], 
+      LineBox[{{5.239165845976375, 2986.1486991862184`}, {5.242697553906802, 
+       4700.250354778254}, {5.243650303834278, 5163.985648235772}}], 
+      LineBox[{{5.624507961742154, 4796.509351649205}, {5.624507961742154, 
+       4796.509351649205}}], 
+      LineBox[{{6.421687331132694, 3431.1650652778335`}, {6.426182875462379, 
+       3726.7339708937798`}}], 
+      LineBox[{{7.2063694969200185`, 520.9599900585599}, {7.208715098152446, 
+       1875.2957787653431`}}], 
+      LineBox[{{7.586316492732293, 2599.019172134809}, {7.5979362205873615`, 
+       3966.9125375794247`}, {7.603736256862289, 4850.669400463812}}], 
+      LineBox[{{8.00416342604882, 1437.1643259041011`}, {8.004777163621492, 
+       6466.051508771256}}], 
+      LineBox[{{9.973929979306016, 6765.922498829663}, {9.977877942155269, 
+       8120.656265377998}}], 
+      LineBox[{{11.1779150559125, 3328.5162240564823`}, {11.178491211288234`, 
+       6223.071119055152}, {11.181340712792675`, 2155.450261503458}}], 
+      LineBox[{{5.129502356796239, 2592.7758270147024`}, {5.134132066832752, 
+       4545.437109954713}, {5.136510932389841, 5553.345506609592}}], 
+      LineBox[{{7.1088510037096215`, 6530.0324503155425`}, {
+       7.1088510037096215`, 6530.0324503155425`}}], 
+      LineBox[{{10.67677795034479, 2169.991214156151}, {10.677748149992773`, 
+       7399.257555007935}}], 
+      LineBox[{{4.928267862069555, 1984.7236750946322`}, {4.938663949721583, 
+       5355.265281849046}, {4.941107919128182, 6154.5321969449}}], 
+      LineBox[{{6.136257443180584, 6112.4349963092245`}, {6.136257443180584, 
+       6112.4349963092245`}}], 
+      LineBox[{{7.3087841438102705`, 3000.163745236583}, {7.312876504510297, 
+       4930.792123693973}}], 
+      LineBox[{{8.51720363766559, 2864.412786785513}, {8.52058417467219, 
+       3885.332144897431}, {8.526539946331553, 4389.683506689966}}], 
+      LineBox[{{9.30570844930022, 7249.78149484843}, {9.306302043388172, 
+       4161.231074683368}, {9.309765212411229, 8112.277951423079}}], 
+      LineBox[{{9.693685527105242, 1460.5111810192466`}, {9.69882110844646, 
+       5308.7879095077515`}}], 
+      LineBox[{{10.07151022916738, 5139.554959252477}, {10.07151022916738, 
+       5139.554959252477}}], 
+      LineBox[{{10.478024583447501`, 2311.952276557684}, {10.48257852211808, 
+       6560.024492755532}}], 
+      LineBox[{{11.28170949873035, 490.5124276429415}, {11.285103957425214`, 
+       5195.96677467227}, {11.287412752380032`, 4170.0252358317375`}}], 
+      LineBox[{{5.001499618020993, 2190.1678716379392`}, {5.006407964392693, 
+       3939.5301344963955`}, {5.0120137603005634`, 5951.517979576776}}], 
+      LineBox[{{5.4074921631825985`, 3688.2335477963206`}, {5.408795823607377,
+        4468.498952609021}}], 
+      LineBox[{{6.211949312429077, 1120.037447213428}, {6.218192641551523, 
+       2381.9670348626096`}}], 
+      LineBox[{{6.590035073714804, 5623.162018372677}, {6.595895579392746, 
+       2398.2905687433667`}}], 
+      LineBox[{{6.97409957560318, 3781.832461587619}, {6.974491149257477, 
+       5061.229867208749}, {6.97918551730186, 4054.616192427464}}], 
+      LineBox[{{8.18491968306531, 1378.381232270971}, {8.187169388263593, 
+       6406.834007512778}}], 
+      LineBox[{{10.14633912053775, 635.8592623993754}, {10.14927186672326, 
+       3022.0961046740413`}}], 
+      LineBox[{{5.603013487129887, 4675.433097825502}, {5.6031509437206, 
+       4779.634885510663}}], 
+      LineBox[{{6.400738230216131, 5358.141871460248}, {6.400738230216131, 
+       5358.141871460248}}], 
+      LineBox[{{7.17761721710523, 8051.027101126965}, {7.179742875434985, 
+       90.75153452437371}, {7.1856400055847605`, 7160.098153479863}}], 
+      LineBox[{{7.969493242450477, 8183.2583128251135`}, {7.976148911048011, 
+       3959.0181350000203`}, {7.976609854708643, 7648.350586269982}}], 
+      LineBox[{{8.385111137763856, 3466.7868110872805`}, {8.38683612015673, 
+       6369.813343992457}, {8.389562132582832, 4136.214466903359}}], 
+      LineBox[{{9.955313894476816, 4041.796935237944}, {9.957698045358027, 
+       5944.544466160238}}], 
+      LineBox[{{10.733440697240221`, 6430.046473696828}, {10.74343639315393, 
+       6854.89886072278}, {10.744797481828744`, 4472.416454330087}}], 
+      LineBox[{{11.157150749478685`, 5719.275979235768}, {11.158480568994158`,
+        7410.546795397997}}], 
+      LineBox[{{5.109609645331818, 2526.3666230147937`}, {5.114973451466743, 
+       4731.819548323227}, {5.117120705046853, 5619.048618162924}}], 
+      LineBox[{{5.901934008318081, 5626.496916461736}, {5.901934008318081, 
+       5626.496916461736}}], 
+      LineBox[{{6.300509366701281, 2043.0163136741612`}, {6.307965664466842, 
+       6267.390708982013}}], 
+      LineBox[{{9.472170375118878, 55.12435697391629}, {9.475318847970872, 
+       5773.438931718469}}], 
+      LineBox[{{10.247973872866403`, 5923.488928228617}, {10.247973872866403`,
+        5923.488928228617}}], 
+      LineBox[{{10.63635166423649, 1704.066046103835}, {10.647930941138712`, 
+       5849.982278063893}, {10.648911669226163`, 2495.0228454619646`}}], 
+      LineBox[{{4.902152969834477, 1915.540622728091}, {4.90923716578249, 
+       4127.401520636049}, {4.915122522570309, 5981.224703139509}, {
+       4.915886210320169, 6222.866056665138}}], 
+      LineBox[{{5.695701650047362, 5216.76325424097}, {5.695701650047362, 
+       5216.76325424097}}], 
+      LineBox[{{6.493370074642531, 4325.298816934228}, {6.493370074642531, 
+       4325.298816934228}}], 
+      LineBox[{{7.66412018092456, 5091.974820469506}, {7.6692406320201805`, 
+       3793.3397170286626`}}], 
+      LineBox[{{8.08207841578299, 5537.03489844501}, {8.08207841578299, 
+       5537.03489844501}}], 
+      LineBox[{{8.490373046835368, 1268.144949607551}, {8.490373046835368, 
+       1268.144949607551}}], 
+      LineBox[{{9.28124237342737, 4840.312462989241}, {9.286975960095898, 
+       184.3778793103993}, {9.286975960095898, 184.3778793103993}}], 
+      LineBox[{{10.839326812005837`, 2286.9938486367464`}, {
+       10.839326812005837`, 2286.9938486367464`}}], 
+      LineBox[{{7.0257715994784675`, 4800.506704350468}, {7.030817132682367, 
+       5774.6565588475205`}}], 
+      LineBox[{{7.4258910781904754`, 6087.328158183955}, {7.4316050918003, 
+       1774.0090898368508`}}], 
+      LineBox[{{7.825564657362447, 2553.818252406083}, {7.82694355875314, 
+       4084.9946189289913`}, {7.828276875138219, 5305.6424309797585`}}], 
+      LineBox[{{7.616117908611676, 3536.878112270497}, {7.624555824442211, 
+       4186.068207630888}}], 
+      LineBox[{{8.030015022204891, 2537.912949508056}, {8.030353560885183, 
+       5371.869894128293}}], 
+      LineBox[{{9.617000873980759, 270.5796548202634}, {9.620421937688214, 
+       5690.766636051238}}], 
+      LineBox[{{9.990259593904655, 987.7058830186725}, {10.001083178199487`, 
+       6605.806293405592}, {10.001705377639924`, 4572.261723712087}}], 
+      LineBox[{{6.348959109671805, 2580.078450266039}, {6.355149337915804, 
+       5229.427062803414}}], 
+      LineBox[{{7.13173781076474, 2296.936317710206}, {7.13173781076474, 
+       2296.936317710206}}], 
+      LineBox[{{8.33090683789576, 543.2907793261111}, {8.335884480341317, 
+       4759.10491748713}, {8.338680515773346, 2062.85274801217}}], 
+      LineBox[{{8.726253615108607, 8130.595413738862}, {8.729359688765093, 
+       4320.820518443361}}], 
+      LineBox[{{9.130866546958226, 7182.408705301583}, {9.132367293757707, 
+       4041.324074715376}, {9.133005396892006, 264.55025711655617`}}], 
+      LineBox[{{9.901187325592758, 4477.617148295045}, {9.902852866891605, 
+       3585.8774275630713`}}], 
+      LineBox[{{10.302274105591925`, 2468.403251886368}, {10.304677327240352`,
+        2167.692459784448}}], 
+      LineBox[{{4.953489570877569, 2053.5456543875043`}, {4.962205376872857, 
+       4973.8276603099075`}, {4.965499642946083, 6086.538861949142}}], 
+      LineBox[{{5.364987820434689, 3498.9179492840776`}, {5.367024826780544, 
+       4656.094477505016}}], 
+      LineBox[{{7.717668385562792, 5340.273132260889}, {7.717668385562792, 
+       5340.273132260889}}], 
+      LineBox[{{8.133641979190656, 7157.179087728262}, {8.138328641803303, 
+       825.1944464351982}, {8.138328641803303, 825.1944464351982}}], 
+      LineBox[{{8.53892159808094, 4177.577021030709}, {8.539691039602971, 
+       5694.503445582464}, {8.546059994579899, 4365.117786575109}, {
+       8.549801830349377, 2748.42535645701}}], 
+      LineBox[{{10.503767834912571`, 7355.556276246905}, {10.509396183208471`,
+        3950.7844058722258`}}], 
+      LineBox[{{5.770393418483568, 5690.9146349147195`}, {5.770393418483568, 
+       5690.9146349147195`}}], 
+      LineBox[{{6.177572642816661, 7530.094630728243}, {6.177572642816661, 
+       7530.094630728243}}], 
+      LineBox[{{6.560126878615914, 5209.92300600349}, {6.567816330340283, 
+       5590.772911863169}}], 
+      LineBox[{{7.736122909530176, 1958.196752523072}, {7.736617298679384, 
+       5185.350474926643}}], 
+      LineBox[{{8.151184786010441, 4443.765569211915}, {8.151184786010441, 
+       4443.765569211915}}], 
+      LineBox[{{8.55837012898673, 5625.333953147754}, {8.55837012898673, 
+       5625.333953147754}}], 
+      LineBox[{{9.35096846218979, 5157.555635042489}, {9.35096846218979, 
+       5157.555635042489}}], 
+      LineBox[{{5.971303525270319, 1084.3624902794836`}, {5.971303525270319, 
+       1084.3624902794836`}}], 
+      LineBox[{{7.147672293219749, 5839.32624251442}, {7.147827673799167, 
+       6437.447995052207}}], 
+      LineBox[{{8.745307651282625, 1260.3031261079013`}, {8.748487870743755, 
+       7405.585723251104}}], 
+      LineBox[{{9.924434944670262, 3567.889206826687}, {9.925324542369266, 
+       1419.9278161376715`}}], 
+      LineBox[{{10.318308089380686`, 1421.7028172686696`}, {
+       10.321761056552708`, 8190.9993464797735`}, {10.321761056552708`, 
+       8190.9993464797735`}}], 
+      LineBox[{{5.867955078723638, 2647.3598347191}, {5.867955078723638, 
+       2647.3598347191}}], 
+      LineBox[{{7.4439867435496865`, 6589.6117577264085`}, {7.452618892878781,
+        1184.7492532525212`}}], 
+      LineBox[{{8.6483234389767, 2896.5397772993892`}, {8.659108901942721, 
+       4176.881896330044}}], 
+      LineBox[{{9.830098657249676, 4358.343530535698}, {9.830098657249676, 
+       4358.343530535698}}], 
+      LineBox[{{6.074651971817, 5177.806182299973}, {6.075043368134429, 
+       5686.698728845455}}], 
+      LineBox[{{7.250298156308503, 2565.339259843342}, {7.250298156308503, 
+       2565.339259843342}}], 
+      LineBox[{{8.04750799258034, 2584.2340196240693`}, {8.04750799258034, 
+       2584.2340196240693`}}], 
+      LineBox[{{8.456894624902924, 1436.6988811213523`}, {8.457201571572206, 
+       5067.139259574935}}], 
+      LineBox[{{9.24832379351135, 1757.5140782669187`}, {9.24832379351135, 
+       1757.5140782669187`}}], 
+      LineBox[{{10.42065795014822, 3172.0338886007667`}, {10.42065795014822, 
+       3172.0338886007667`}}], 
+      LineBox[{{5.822452625914498, 6042.63896460284}, {5.822452625914498, 
+       6042.63896460284}}], 
+      LineBox[{{6.225824661713844, 5832.857947396347}, {6.227363000081135, 
+       2.3283064365386963`*^-10}, {6.227363000081135, 
+       2.3283064365386963`*^-10}}], 
+      LineBox[{{6.608277231142132, 5880.492355321301}, {6.613807432394258, 
+       2143.0255211819895`}}], 
+      LineBox[{{6.99408580755276, 4170.790685629938}, {6.99408580755276, 
+       4170.790685629938}}], 
+      LineBox[{{7.399032713465611, 5354.51382478606}, {7.40254979471644, 
+       6049.28131533321}}], 
+      LineBox[{{7.78802042337187, 4306.490154596046}, {7.78802042337187, 
+       4306.490154596046}}], 
+      LineBox[{{8.603191371954063, 8176.344776846468}, {8.60623414490897, 
+       7617.06831760332}}], 
+      LineBox[{{8.996390786361674, 3881.9226881489158`}, {8.996390786361674, 
+       3881.9226881489158`}}], 
+      LineBox[{{6.02297774854366, 5409.838995121769}, {6.02297774854366, 
+       5409.838995121769}}], 
+      LineBox[{{7.198985224764126, 3370.0009279656224`}, {7.198985224764126, 
+       3370.0009279656224`}}], 
+      LineBox[{{8.410637582541654, 4881.18720764108}, {8.410637582541654, 
+       4881.18720764108}}], 
+      LineBox[{{8.796017306183014, 4289.9886608198285`}, {8.800525488275419, 
+       8190.999941915274}, {8.800525488275419, 8190.999941915274}}], 
+      LineBox[{{10.761343665406784`, 1919.1250652372837`}, {10.76698779406498,
+        8190.62130792439}, {10.76698779406498, 8190.62130792439}}], 
+      LineBox[{{5.925619884696794, 6794.5170488747535`}, {5.925619884696794, 
+       6794.5170488747535`}}], 
+      LineBox[{{6.322328699508209, 5887.777099645929}, {6.322328699508209, 
+       5887.777099645929}}], 
+      LineBox[{{7.096359361675372, 1390.344883939717}, {7.096469351960235, 
+       1793.8566499934532`}}], 
+      LineBox[{{8.700024116603785, 6339.121052782983}, {8.704713449425505, 
+       7936.242788521573}}], 
+      LineBox[{{9.093715127173159, 4943.135240934789}, {9.09729279757082, 
+       0.}, {9.09729279757082, 0.}}], 
+      LineBox[{{9.494838463362859, 2559.3289245404303`}, {9.499847528282162, 
+       9.298324584960938*^-6}, {9.499847528282162, 9.298324584960938*^-6}}], 
+      LineBox[{{11.067140408526226`, 5846.925633043051}, {11.067140408526226`,
+        5846.925633043051}}], 
+      LineBox[{{5.335348961849102, 3371.850928654836}, {5.337923858934969, 
+       4781.984285956365}}], 
+      LineBox[{{5.7149935123455355`, 5335.887967916438}, {5.716438347242908, 
+       6586.757915251423}}], 
+      LineBox[{{7.30161108785288, 3830.5884451856837`}, {7.30161108785288, 
+       3830.5884451856837`}}], 
+      LineBox[{{7.687731334027774, 3919.148558186367}, {7.687731334027774, 
+       3919.148558186367}}], 
+      LineBox[{{8.099405506422032, 2414.637987729162}, {8.099405506422032, 
+       2414.637987729162}}], 
+      LineBox[{{6.201698652265252, 2118.5507215717807`}, {6.201698652265252, 
+       2118.5507215717807`}}], 
+      LineBox[{{8.176660605918148, 5022.682449106127}, {8.176660605918148, 
+       5022.682449106127}}], 
+      LineBox[{{9.3734870944998, 5924.316077634692}, {9.375025471058077, 
+       1142.7462630346417`}}], 
+      LineBox[{{10.1391958330375, 3140.4938605874777`}, {10.1391958330375, 
+       3140.4938605874777`}}], 
+      LineBox[{{10.541769672713157`, 6739.16520562768}, {10.550811967077632`, 
+       6562.635572910309}}], 
+      LineBox[{{10.931949235846467`, 2990.8496181815863`}, {
+       10.932069253545706`, 2672.5488914996386`}}], 
+      LineBox[{{5.2043033203536915`, 2855.9429469156894`}, {
+       5.2095473087608966`, 5292.892806217074}}], 
+      LineBox[{{5.997140636906989, 6899.412257430027}, {5.997140636906989, 
+       6899.412257430027}}], 
+      LineBox[{{6.390547115354094, 3060.0091014995705`}, {6.394913997791978, 
+       2849.1095673639793`}}], 
+      LineBox[{{8.772252588463385, 2604.0351977832615`}, {8.77440720104278, 
+       2399.760139375925}}], 
+      LineBox[{{9.948019016525409, 2348.2365625724196`}, {9.948019016525409, 
+       2348.2365625724196`}}], 
+      LineBox[{{10.347431812069955`, 2358.4470659270883`}, {
+       10.347431812069955`, 2358.4470659270883`}}], 
+      LineBox[{{11.145174728120427`, 1689.277513742447}, {11.145174728120427`,
+        1689.277513742447}}], 
+      LineBox[{{5.893792190360308, 5127.128459597006}, {5.893792190360308, 
+       5127.128459597006}}], 
+      LineBox[{{9.06769830946447, 1663.8530364222825`}, {9.0715185677169, 
+       8190.99999685213}, {9.0715185677169, 8190.99999685213}}], 
+      LineBox[{{10.241545693805035`, 2836.4164407476783`}, {
+       10.241545693805035`, 2836.4164407476783`}}], 
+      LineBox[{{11.038561981983449`, 3473.437457099557}, {11.043771079426707`,
+        8190.953592583537}, {11.043771079426707`, 8190.953592583537}}], 
+      LineBox[{{6.10048908345367, 6480.4530154541135`}, {6.101215093610298, 
+       7451.705843895674}}], 
+      LineBox[{{7.280763723092885, 2302.030243113637}, {7.280763723092885, 
+       2302.030243113637}}], 
+      LineBox[{{8.073456749501185, 4180.1671801079065`}, {8.073456749501185, 
+       4180.1671801079065`}}], 
+      LineBox[{{9.274091904567715, 3561.7727010697126`}, {9.274091904567715, 
+       3561.7727010697126`}}], 
+      LineBox[{{9.663709577477515, 5454.850651033223}, {9.663709577477515, 
+       5454.850651033223}}], 
+      LineBox[{{10.038649584552532`, 79.2535325884819}, {10.044939375740064`, 
+       4795.090808391571}}], 
+      LineBox[{{10.8329727544182, 2445.311158016324}, {10.8329727544182, 
+       2445.311158016324}}], 
+      LineBox[{{11.252612768962917`, 133.0981634259224}, {11.256787638944143`,
+        5026.601186782122}}], 
+      LineBox[{{5.847359057417275, 6217.3417196464725`}, {5.847359057417275, 
+       6217.3417196464725`}}], 
+      LineBox[{{6.249950671162435, 2311.8382153981365`}, {6.25166066242797, 
+       5001.886631782865}}], 
+      LineBox[{{9.80651458539453, 2685.4832872077823`}, {9.80874893661212, 
+       0.05228233337402344}, {9.80874893661212, 0.05228233337402344}}], 
+      LineBox[{{10.589145564257183`, 19.87669563293457}, {10.59420912438015, 
+       6857.415990754962}}], 
+      LineBox[{{10.985255608914958`, 2081.734060049057}, {10.985255608914958`,
+        2081.734060049057}}], 
+      LineBox[{{5.256031955583665, 3050.93029530911}, {5.260162370967225, 
+       5099.840266047395}}], 
+      LineBox[{{5.644937192343109, 4494.701076041558}, {5.644937192343109, 
+       4494.701076041558}}], 
+      LineBox[{{6.048814860180329, 4828.527607449796}, {6.048851256591611, 
+       4874.514036196168}}], 
+      LineBox[{{8.431418804995218, 6233.806706102565}, {8.431418804995218, 
+       6233.806706102565}}], 
+      LineBox[{{8.81978202390264, 4372.793462008238}, {8.81978202390264, 
+       4372.793462008238}}], 
+      LineBox[{{9.224759087626675, 7604.642633654177}, {9.224759087626675, 
+       7604.642633654177}}], 
+      LineBox[{{5.945466413633648, 4325.241029339493}, {5.945466413633648, 
+       4325.241029339493}}], 
+      LineBox[{{7.1220158274475605`, 6551.362874330953}, {7.1220158274475605`,
+        6551.362874330953}}], 
+      LineBox[{{9.119483238229524, 4701.945272926241}, {9.119483238229524, 
+       4701.945272926241}}], 
+      LineBox[{{9.519367524267796, 5426.473041065037}, {9.519367524267796, 
+       5426.473041065037}}], 
+      LineBox[{{10.689714576395371`, 927.3000490963459}, {10.6898108717233, 
+       6366.518620312214}}], 
+      LineBox[{{11.091868355051936`, 2232.1173315793276`}, {
+       11.097381976646568`, 8190.995279818773}, {11.097381976646568`, 
+       8190.995279818773}}], 
+      LineBox[{{5.740272065542841, 2954.861934223096}, {5.740272065542841, 
+       2954.861934223096}}], 
+      LineBox[{{6.15216330672701, 3848.2583893274423`}, {6.1535763774520245`, 
+       5848.8602821812965`}}], 
+      LineBox[{{8.12535426334288, 5567.378588339314}, {8.12535426334288, 
+       5567.378588339314}}], 
+      LineBox[{{10.497420345723873`, 351.36886617541313`}, {
+       10.497420345723873`, 351.36886617541313`}}], 
+      LineBox[{{5.3935714577071385`, 3625.2944207925466`}, {5.395110511433212,
+        4530.87052572472}}], 
+      LineBox[{{5.777525187995293, 4106.494506788091}, {5.777525187995293, 
+       4106.494506788091}}], 
+      LineBox[{{6.184217852637497, 845.9931578810792}, {6.1906727952650975`, 
+       2142.0407163656782`}}], 
+      LineBox[{{6.577653421965418, 2654.2536161618773`}, {6.577653421965418, 
+       2654.2536161618773`}}], 
+      LineBox[{{7.364468925642292, 4208.985902622342}, {7.364468925642292, 
+       4208.985902622342}}], 
+      LineBox[{{7.749097287990599, 5196.496761051007}, {7.749097287990599, 
+       5196.496761051007}}], 
+      LineBox[{{8.568592687715174, 6002.5325879547745`}, {8.568592687715174, 
+       6002.5325879547745`}}], 
+      LineBox[{{9.362996966623935, 6042.875396065414}, {9.362996966623935, 
+       6042.875396065414}}], 
+      LineBox[{{10.126402100441558`, 5339.444414176047}, {10.126402100441558`,
+        5339.444414176047}}], 
+      LineBox[{{10.534518216870637`, 2981.7661842405796`}, {
+       10.534518216870637`, 2981.7661842405796`}}], 
+      LineBox[{{10.918496631799313`, 636.0264114588499}, {10.918496631799313`,
+        636.0264114588499}}], 
+      LineBox[{{5.580953572684849, 4553.883374459576}, {5.581098920514984, 
+       4661.204872732633}}], 
+      LineBox[{{6.3826437231296875`, 5091.468471656088}, {6.3826437231296875`,
+        5091.468471656088}}], 
+      LineBox[{{7.160500526105844, 6367.435964041855}, {7.165092268119525, 
+       7910.689926595427}}], 
+      LineBox[{{8.76037022960357, 4200.0947078205645`}, {8.76037022960357, 
+       4200.0947078205645`}}], 
+      LineBox[{{9.936226980597835, 1338.6582191213965`}, {9.936226980597835, 
+       1338.6582191213965`}}], 
+      LineBox[{{10.33110182197663, 1140.6957851052284`}, {10.33110182197663, 
+       1140.6957851052284`}}], 
+      LineBox[{{5.486351811294239, 4062.601928495278}, {5.486536883302241, 
+       4184.523380439321}}], 
+      LineBox[{{6.286139685335322, 2964.1813055656385`}, {6.289334146226572, 
+       8190.999999986263}, {6.289334146226572, 8190.999999986263}}], 
+      LineBox[{{7.05787466301709, 1987.9160324004479`}, {7.0580488009135784`, 
+       2604.011020894628}}], 
+      LineBox[{{9.055316657715084, 7056.371824059635}, {9.055316657715084, 
+       7056.371824059635}}], 
+      LineBox[{{9.459382138571256, 6848.374195147306}, {9.459788723369492, 
+       622.7951149307191}}], 
+      LineBox[{{9.838436585837306, 3973.113064147532}, {9.838436585837306, 
+       3973.113064147532}}], 
+      LineBox[{{10.228751961209094`, 2722.254447378218}, {10.231992297097639`,
+        0.0008171126246452332}, {10.231992297097639`, 
+       0.0008171126246452332}}], 
+      LineBox[{{10.625628312038106`, 7629.891806691885}, {10.625628312038106`,
+        7629.891806691885}}], 
+      LineBox[{{5.683319998297976, 3011.981753857457}, {5.683319998297976, 
+       3011.981753857457}}], 
+      LineBox[{{6.087570527635336, 5708.5171431398485`}, {6.08813166525241, 
+       6448.5926826692885`}}], 
+      LineBox[{{6.476975006856775, 4115.802857787814}, {6.483106360027724, 
+       8190.999999998836}, {6.483106360027724, 8190.999999998836}}], 
+      LineBox[{{7.267437048613653, 1975.3042300078087`}, {7.268382071343499, 
+       6041.1709522684105`}}], 
+      LineBox[{{8.469632534856778, 5398.5445738099515`}, {8.469632534856778, 
+       5398.5445738099515`}}], 
+      LineBox[{{9.261207849039533, 1362.6650516204536`}, {9.263786680140383, 
+       1.341104507446289*^-7}, {9.263786680140383, 1.341104507446289*^-7}}], 
+      LineBox[{{9.651681073043374, 4433.184377074242}, {9.654676867106732, 
+       0.}, {9.654676867106732, 0.}}], 
+      LineBox[{{10.03056326801842, 3662.26231354475}, {10.03056326801842, 
+       3662.26231354475}}], 
+      LineBox[{{10.821034572916297`, 5385.97781740129}, {10.822062994291041`, 
+       2897.8103092461824`}}], 
+      LineBox[{{5.8291994112686325`, 4485.938457899494}, {5.830912061156061, 
+       6178.20748058043}}], 
+      LineBox[{{7.006386143695016, 4413.327645656653}, {7.0113162197857175`, 
+       4679.665619934443}}], 
+      LineBox[{{7.413509426441089, 2273.923422494903}, {7.413509426441089, 
+       2273.923422494903}}], 
+      LineBox[{{9.794722549466956, 6368.524769164622}, {9.794722549466956, 
+       6368.524769164622}}], 
+      LineBox[{{10.581529177268154`, 6640.769780620933}, {10.581529177268154`,
+        6640.769780620933}}], 
+      LineBox[{{10.971929015647834`, 3754.741588398814}, {10.977105367505954`,
+        8190.57242244482}, {10.977105367505954`, 8190.57242244482}}], 
+      LineBox[{{5.633615686460383, 3726.3084005627315`}, {5.633615686460383, 
+       3726.3084005627315`}}], 
+      LineBox[{{6.035896304361994, 5004.265530504752}, {6.035896304361994, 
+       5004.265530504752}}], 
+      LineBox[{{6.43089574202687, 4475.200179077452}, {6.43089574202687, 
+       4475.200179077452}}], 
+      LineBox[{{7.211813457650221, 6324.766650561709}, {7.211813457650221, 
+       6324.766650561709}}], 
+      LineBox[{{8.41855440942755, 5324.828937554732}, {8.421467800844209, 
+       6024.569993272424}}], 
+      LineBox[{{9.209482916649295, 6169.037444040179}, {9.212377435877288, 
+       1169.778961867094}}], 
+      LineBox[{{10.774974370802475`, 7605.627063140273}, {10.776750363893846`,
+        6956.147906765342}}], 
+      LineBox[{{5.535002462401532, 4309.296330122044}, {5.535165835516894, 
+       4423.453079055587}}], 
+      LineBox[{{5.9325478578153135`, 6263.443299476756}, {5.9325478578153135`,
+        6263.443299476756}}], 
+      LineBox[{{6.329875601825618, 2365.747983438894}, {6.3380332539164925`, 
+       8190.999999998836}, {6.3380332539164925`, 8190.999999998836}}], 
+      LineBox[{{8.713871963359221, 485.9877065997571}, {8.713871963359221, 
+       485.9877065997571}}], 
+      LineBox[{{9.507339019833655, 4630.648725163192}, {9.509905844121725, 
+       5472.573927685618}}], 
+      LineBox[{{10.677776394893467`, 791.7494334578514}, {10.677776394893467`,
+        791.7494334578514}}], 
+      LineBox[{{11.078074042575004`, 565.6510323733091}, {11.082726819789048`,
+        6865.18387915194}}], 
+      LineBox[{{5.733625658290299, 5247.538850941346}, {5.733625658290299, 
+       5247.538850941346}}], 
+      LineBox[{{6.139244750908675, 2081.9434562562965`}, {6.140512413961794, 
+       3851.541355454363}}], 
+      LineBox[{{6.525353888987105, 4742.724477851065}, {6.525492796132653, 
+       5033.866587327095}}], 
+      LineBox[{{7.699704015819828, 5521.921202582307}, {7.699704015819828, 
+       5521.921202582307}}], 
+      LineBox[{{8.112379884882456, 3370.6267007552087`}, {8.112379884882456, 
+       3370.6267007552087`}}], 
+      LineBox[{{10.082091296467441`, 6789.022530093789}, {10.082779215254808`,
+        324.1454643830657}}], 
+      LineBox[{{10.484626613127931`, 1664.0869332700968`}, {10.48871353284631,
+        8190.999999925494}, {10.48871353284631, 8190.999999925494}}], 
+      LineBox[{{5.803362299631964, 3928.3771313279867`}, {5.805527201827771, 
+       6005.580520780408}}], 
+      LineBox[{{6.9817041558033734`, 4141.366864556447}, {6.9817041558033734`,
+        4141.366864556447}}], 
+      LineBox[{{7.387074400498991, 5033.061581735499}, {7.387074400498991, 
+       5033.061581735499}}], 
+      LineBox[{{7.7771302460594445`, 4057.1958649177104`}, {
+       7.7771302460594445`, 4057.1958649177104`}}], 
+      LineBox[{{8.590090599495733, 7347.377902340144}, {8.590809720204676, 
+       407.2806717399508}}], 
+      LineBox[{{9.390551216220572, 8036.332883503288}, {9.390551216220572, 
+       8036.332883503288}}], 
+      LineBox[{{10.151989565633443`, 5217.449751280248}, {10.151989565633443`,
+        5217.449751280248}}], 
+      LineBox[{{6.010059192725324, 6042.471003806102}, {6.010059192725324, 
+       6042.471003806102}}], 
+      LineBox[{{7.186156991878033, 1031.14935897151}, {7.186722020496996, 
+       3285.954732264392}}], 
+      LineBox[{{8.393205075133658, 4084.402474137023}, {8.393205075133658, 
+       4084.402474137023}}], 
+      LineBox[{{8.7841349473232, 2629.831958517432}, {8.784229483714881, 
+       4070.266138397157}}], 
+      LineBox[{{9.96154832755663, 2333.9391359090805`}, {9.96154832755663, 
+       2333.9391359090805`}}], 
+      LineBox[{{10.74940548390488, 3911.5451225191355`}, {10.755057629843803`,
+        0.00023727118968963623`}, {10.755057629843803`, 
+       0.00023727118968963623`}}], 
+      LineBox[{{11.15850132138755, 780.4580936580896}, {11.162537856771529`, 
+       1693.9820040464401`}}], 
+      LineBox[{{5.511035774329256, 4186.22249833995}, {5.511209478051762, 
+       4304.133959917992}}], 
+      LineBox[{{5.906710746178643, 2571.4354530747514`}, {5.9105776063101265`,
+        6749.425730198622}}], 
+      LineBox[{{6.310265694783913, 1925.9506992159877`}, {6.312616151864876, 
+       5869.5959900741}}], 
+      LineBox[{{7.083531128789279, 3759.853827040177}, {7.083531128789279, 
+       3759.853827040177}}], 
+      LineBox[{{9.080831071644976, 4485.853795897216}, {9.08429313762953, 
+       4881.947008501738}}], 
+      LineBox[{{9.483282010965368, 2700.257058326155}, {9.483282010965368, 
+       2700.257058326155}}], 
+      LineBox[{{11.05475875677684, 3984.396315395832}, {11.05475875677684, 
+       3984.396315395832}}], 
+      LineBox[{{5.320106919591623, 3308.0479364297935`}, {5.322967310099716, 
+       4845.188806452672}}], 
+      LineBox[{{5.704521488092942, 4523.5433557946235`}, {5.704521488092942, 
+       4523.5433557946235`}}], 
+      LineBox[{{6.113407639272005, 7496.532596830744}, {6.113407639272005, 
+       7496.532596830744}}], 
+      LineBox[{{7.290183983763533, 2535.0406443839893`}, {7.292481768903606, 
+       4444.616532075219}}], 
+      LineBox[{{7.675978768719823, 4458.642391087487}, {7.675978768719823, 
+       4458.642391087487}}], 
+      LineBox[{{8.086431127961609, 2688.1958076972514`}, {8.086431127961609, 
+       2688.1958076972514`}}], 
+      LineBox[{{9.675671116486495, 7409.662844538689}, {9.677415393645092, 
+       763.294755242765}}], 
+      LineBox[{{10.054147339873566`, 5200.476252563298}, {10.058915416824252`,
+        4179.309449695051}}], 
+      LineBox[{{10.848228412341015`, 6661.620021119714}, {10.848228412341015`,
+        6661.620021119714}}], 
+      LineBox[{{11.26916929069353, 4982.124099552631}, {11.269327846980964`, 
+       1338.6714131385088`}}], 
+      LineBox[{{5.460902773001079, 3938.4128620485426`}, {5.461344452207023, 
+       4220.536356833589}}], 
+      LineBox[{{5.855036522905303, 5797.955414816039}, {5.855036522905303, 
+       5797.955414816039}}], 
+      LineBox[{{6.262013675886731, 5011.8164902844}, {6.2640084586755735`, 
+       8190.999999999534}, {6.2640084586755735`, 8190.999999999534}}], 
+      LineBox[{{6.643783228568119, 6393.053027442889}, {6.64868988598814, 
+       1634.5253022124525`}}], 
+      LineBox[{{7.032218197244902, 2417.9505418762565`}, {7.037755937260433, 
+       5206.632595042698}}], 
+      LineBox[{{9.818306621322103, 2008.5673703327775`}, {9.82245737146651, 
+       4060.6184836551547`}}], 
+      LineBox[{{10.606147305882054`, 5457.631095975637}, {10.606147305882054`,
+        5457.631095975637}}], 
+      LineBox[{{5.655755018562416, 4977.269623271073}, {5.65587539671958, 
+       5074.411609957111}}], 
+      LineBox[{{6.061733415998665, 4885.430140686221}, {6.061949978037546, 
+       5163.004840093199}}], 
+      LineBox[{{6.45185035029745, 3800.5473589263856`}, {6.452112561715855, 
+       4310.144946113927}}], 
+      LineBox[{{7.2413280970399985`, 5703.7678350037895`}, {
+       7.2413280970399985`, 5703.7678350037895`}}], 
+      LineBox[{{8.82830775649152, 7207.22694323957}, {8.82830775649152, 
+       7207.22694323957}}], 
+      LineBox[{{9.235439737983167, 4725.912048570812}, {9.235439737983167, 
+       4725.912048570812}}], 
+      LineBox[{{9.627624064175087, 2752.2353749647737`}, {9.632009032548702, 
+       3268.5357291847467`}}], 
+      LineBox[{{10.407864217552278`, 2215.444271311164}, {10.407864217552278`,
+        2215.444271311164}}], 
+      LineBox[{{11.211807694456041`, 3863.307911261916}, {11.211807694456041`,
+        3863.307911261916}}], 
+      LineBox[{{5.558295239818362, 4431.843664404005}, {5.55844919622207, 
+       4542.477357051801}}], 
+      LineBox[{{6.358517713681096, 2966.8139707793016`}, {6.361476139752559, 
+       8190.999999999767}, {6.361476139752559, 8190.999999999767}}], 
+      LineBox[{{7.134844060333656, 5902.634210899938}, {7.134847731083992, 
+       5916.595018846914}}], 
+      LineBox[{{8.736605511883944, 4017.1619922742248`}, {8.736605511883944, 
+       4017.1619922742248`}}], 
+      LineBox[{{9.531312123120356, 6660.484070666134}, {9.536660769337978, 
+       2.2078762575984}, {9.536660769337978, 2.2078762575984}}], 
+      LineBox[{{9.913733062893526, 5283.518543064594}, {9.913733062893526, 
+       5283.518543064594}}], 
+      LineBox[{{10.702257121715384`, 7722.508209332824}, {10.707258537990722`,
+        6196.595828190446}}], 
+      LineBox[{{11.10519494831906, 2667.0417567640543`}, {11.10519494831906, 
+       2667.0417567640543`}}], 
+      LineBox[{{5.752188924692808, 5454.18286065117}, {5.752415087685305, 
+       5658.501644471311}}], 
+      LineBox[{{6.165081862545346, 5870.684798321454}, {6.16620871914905, 
+       7488.3068508005235`}}], 
+      LineBox[{{6.548672463021376, 5054.466335408157}, {6.548672463021376, 
+       5054.466335408157}}], 
+      LineBox[{{7.341488364997733, 3834.436532574706}, {7.341566548783165, 
+       4194.2168300468475`}}], 
+      LineBox[{{7.723649379403938, 2900.5065464749932`}, {7.729528623431896, 
+       8.847564458847046*^-8}, {7.729528623431896, 8.847564458847046*^-8}}], 
+      LineBox[{{10.510214078319814`, 4245.570637792349}, {10.514073802126536`,
+        2612.5016674101353`}}], 
+      LineBox[{{10.89266366192771, 4194.877175703645}, {10.89266366192771, 
+       4194.877175703645}}], 
+      LineBox[{{11.319973627801176`, 3732.8369737416506`}, {
+       11.325083737226581`, 1480.3588314205408`}}]},
+     Annotation[#, "Charting`Private`Tag$33698#1"]& ], {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "ScalingFunctions" -> None, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{-8.089345809599598, 11.325084133439438`}, {0., 
+   8190.999999999767}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.842549491382333*^9},
+ CellLabel->"Out[40]=",ExpressionUUID->"4a33430a-5d59-4267-84d6-02f4cdc9a52b"]
+}, Open  ]]
+},
+WindowSize->{714, 794},
+WindowMargins->{{4, Automatic}, {Automatic, 9}},
+TaggingRules->Association["TryRealOnly" -> False],
+FrontEndVersion->"12.3 for Mac OS X x86 (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"4777785e-782a-4beb-8e80-f3337015e8a3"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 238, 5, 44, "Text",ExpressionUUID->"7577991f-98ed-4439-8521-5da93b5ff223"],
+Cell[CellGroupData[{
+Cell[821, 29, 14979, 369, 65, "WolframAlphaShortInput",ExpressionUUID->"547fb9da-f00d-4f96-a1f6-7bc84d926ada"],
+Cell[15803, 400, 278, 4, 34, "Output",ExpressionUUID->"3b88d063-53d9-4059-9946-aa1895066457"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16118, 409, 169, 3, 30, "Input",ExpressionUUID->"24a7e5c9-b526-4444-822f-157f44bc767f"],
+Cell[16290, 414, 353, 10, 34, "Output",ExpressionUUID->"4266eb5f-eeab-45ad-99f8-c5329acc66eb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16680, 429, 16713, 409, 65, "WolframAlphaShortInput",ExpressionUUID->"463f5017-ad95-4491-9232-fa4b6e67cef6"],
+Cell[33396, 840, 371, 10, 53, "Output",ExpressionUUID->"eb295c1d-0bc2-4d4e-bf3a-a7955ac40b4c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33804, 855, 458, 15, 50, "Input",ExpressionUUID->"cb8e77ed-39e0-4d78-ba1e-c1535e8b189d"],
+Cell[34265, 872, 359, 9, 28, "Message",ExpressionUUID->"7864c739-365b-4bd9-884f-cfbbd333244a"],
+Cell[34627, 883, 480, 15, 53, "Output",ExpressionUUID->"8b28044d-3096-4211-9ffd-499d7f7c21b4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35144, 903, 18980, 438, 65, "WolframAlphaShortInput",ExpressionUUID->"bc4f263c-bfc8-435e-87a8-c850342a45b9"],
+Cell[54127, 1343, 352, 9, 53, "Output",ExpressionUUID->"bcb5a5b0-102f-49b4-88fb-873b604ac8a9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54516, 1357, 364, 10, 50, "Input",ExpressionUUID->"c2bea2b4-e2bd-4dbf-ad93-c78f340d4fd6"],
+Cell[54883, 1369, 165, 2, 34, "Output",ExpressionUUID->"16e5a7de-46d1-4001-bdd9-b3f2ffab352f"]
+}, Open  ]],
+Cell[55063, 1374, 13555, 333, 65, "WolframAlphaShortInput",ExpressionUUID->"345bb91c-546d-4989-96c4-7134d450df0e"],
+Cell[CellGroupData[{
+Cell[68643, 1711, 235, 5, 38, InheritFromParent,ExpressionUUID->"47471e30-7789-4ea2-b194-89f3801ddc80"],
+Cell[68881, 1718, 236, 5, 37, "Output",ExpressionUUID->"7aa2991b-b3db-460c-bedd-082c64dc40e0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[69154, 1728, 301, 8, 33, "Input",ExpressionUUID->"ff7ab7ba-9c51-4c6e-9c5a-81ee1f4993fb"],
+Cell[69458, 1738, 654, 14, 28, "Message",ExpressionUUID->"cf92dca0-5a6d-4b8e-a820-838b412e7894"],
+Cell[70115, 1754, 323, 8, 37, "Output",ExpressionUUID->"f6981b95-2560-4ff2-a2fa-415d231a3773"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[70475, 1767, 302, 8, 33, "Input",ExpressionUUID->"e183a30f-45fa-454b-bb54-c781e82f30e0"],
+Cell[70780, 1777, 655, 14, 28, "Message",ExpressionUUID->"34d9a4af-9c19-4bd4-84f7-42de847b7828"],
+Cell[71438, 1793, 324, 8, 37, "Output",ExpressionUUID->"13c8aee7-d06b-4c1f-bac6-3c9328b8b735"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[71799, 1806, 393, 11, 33, "Input",ExpressionUUID->"2541c49c-6b2b-4fef-90ff-060e8d43420d"],
+Cell[72195, 1819, 75492, 1278, 268, "Output",ExpressionUUID->"4a33430a-5d59-4267-84d6-02f4cdc9a52b"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
